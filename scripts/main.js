@@ -32,13 +32,18 @@ function startTheGame() {
                 savedValues.push(flipMatchCardItself[i].value);
                 if (cardCliked === 2) {
                     if (savedValues[0] === flipMatchCardItself[i].value) {
-                        alert('Found');
+                        console.log('Found');
                         cardCliked = 0;
                         savedValues = [];
                     } else {
-                        alert('Not Found');
+                        console.log('Not Found');
                         cardCliked = 0;
                         savedValues = [];
+                        setTimeout(() => {
+                            for (const flipMatchCardItselfs of flipMatchCardItself) {
+                                flipMatchCardItselfs.classList.remove('flip-match-card-itself-flipped');  
+                            };   
+                        }, 500);                
                     };
                 };
             });

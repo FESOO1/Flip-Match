@@ -64,7 +64,7 @@ body::before {
     position: relative;
     transform: rotateY(180deg);
     overflow: hidden;
-    transition: transform 500ms, background-color 200ms;
+    transition: transform 200ms, background-color 200ms;
 }
 
 .flip-match-card-itself-image {
@@ -76,7 +76,7 @@ body::before {
     overflow: hidden;
     opacity: 0;
     transition: opacity 100ms;
-    transition-delay: 100ms;
+    transition-delay: 20ms;
 }
 
 .flip-match-card-itself-image-itself {
