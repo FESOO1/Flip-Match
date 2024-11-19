@@ -11,23 +11,37 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    row-gap: 40px;
+}
+
+/* FLIP MATCH CONTORLS HEADER CONTAINER */
+
+.flip-match-controls-header-itself {
+    color: white;
+    font-family: mainHeader;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 /* FLIP MATCH CONTROL BUTTONS CONTAINER */
 
 .flip-match-control-buttons-container {
+    width: 300px;
     display: flex;
     flex-direction: column;
     row-gap: 25px;
+    background-color: rgb(40, 40, 40);
+    padding: 10px;
+    border-radius: 1rem;
 }
 
 .flip-match-control-button-itself {
     border-radius: 0.5rem;
     border: 0;
-    padding-inline: 25px;
     height: 45px;
     font-size: 1rem;
-    background-color: rgb(35, 35, 35);
+    background-color: rgb(60, 60, 60);
     cursor: pointer;
     color: white;
     border-top: 1px solid rgba(255,255,255,0.08);
@@ -38,5 +52,5 @@
 }
 
 .flip-match-control-button-itself:hover {
-    background-color: rgb(40, 40, 40);
+    background-color: rgb(70, 70, 70);
 }
