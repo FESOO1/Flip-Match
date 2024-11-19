@@ -1,0 +1,11 @@
+.flip-match-controls {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#nextButton:disabled {
+    color: gray;
+    cursor: not-allowed;
+    background-color: black;
+}
