@@ -48,7 +48,7 @@ body::before {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+    gap: 5px;
 }
 
 /* FLIP MATCH CARD ITSELF */
@@ -62,6 +62,7 @@ body::before {
     padding: 5px;
     cursor: pointer;
     position: relative;
+    transform: rotateY(180deg);
     overflow: hidden;
     transition: transform 500ms, background-color 200ms;
 }
@@ -73,6 +74,7 @@ body::before {
     border-radius: 0.3rem;
     background-color: rgb(10,10,10);
     overflow: hidden;
+    opacity: 0;
     transition: opacity 100ms;
     transition-delay: 100ms;
 }
@@ -90,9 +92,9 @@ body::before {
 }
 
 .flip-match-card-itself-flipped {
-    transform: perspective(400px) rotateY(-180deg);
+    transform: rotateY(0deg);
 }
 
 .flip-match-card-itself-flipped > .flip-match-card-itself-image {
-    opacity: 0;
+    opacity: 1;
 }
