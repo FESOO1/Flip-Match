@@ -38,6 +38,7 @@ body::before {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 /* FLIP MATCH CARDS THEMSELVES */

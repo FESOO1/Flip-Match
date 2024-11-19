@@ -1,0 +1,66 @@
+/* FLIP MATCH RESULT SCREEN */
+
+.flip-match-result-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: rgb(40, 40, 40);
+    border-radius: 1rem;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+/* FLIP MATCH RESULT SCREEN HEADER */
+
+.flip-match-result-screen-header-container {
+    background-color: rgb(23, 23, 23);
+    padding: 10px;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.flip-match-result-screen-header {
+    color: white;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* FLIP MATCH RESULT SCREEN BUTTONS */
+
+.flip-match-result-screen-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+}
+
+.flip-match-result-screen-button-itself {
+    border-radius: 0.5rem;
+    border: 0;
+    height: 45px;
+    font-size: 1rem;
+    background-color: rgb(60, 60, 60);
+    cursor: pointer;
+    color: white;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 200ms;
+}
+
+.flip-match-result-screen-button-itself-svg {
+    color: white;
+    width: 20px;
+    height: 20px;
+}
+
+.flip-match-result-screen-button-itself:hover {
+    background-color: rgb(80,80,80);
+}
