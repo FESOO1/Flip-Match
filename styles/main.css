@@ -127,6 +127,23 @@ body::before {
 
 /* MEDIA QUERIES */
 
-@media (max-width: ) {
-    
+@media (max-width: 800px) {
+    .flip-match-cards-themselves {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 500px) {
+    .flip-match-cards-themselves {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 400px) {
+    .flip-match-cards-themselves {
+        width: 300px;
+        height: 300px;
+    }
 }
