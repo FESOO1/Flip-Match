@@ -24,9 +24,11 @@ body::before {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.1;
+    opacity: 0.05;
     z-index: -1;
 }
+
+/* FLIP MATCH CONTAINER */
 
 /* FLIP MATCH */
 
