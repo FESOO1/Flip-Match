@@ -147,3 +147,10 @@ body::before {
         height: 300px;
     }
 }
+
+@media (max-width: 350px) {
+    .flip-match-cards-themselves {
+        width: 280px;
+        height: 280px;
+    }
+}

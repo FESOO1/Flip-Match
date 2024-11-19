@@ -43,7 +43,7 @@
 .flip-match-result-screen-buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 10px;
+    gap: 10px;
 }
 
 .flip-match-result-screen-button-itself {
@@ -77,4 +77,33 @@
     background-color: rgb(30, 30, 30);
     cursor: not-allowed;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 800px) {
+    .flip-match-result-screen {
+        width: 300px;
+    }
+}
+
+@media (max-width: 500px) {
+    .flip-match-result-screen {
+        width: 250px;
+    }
+    .flip-match-result-screen-header {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .flip-match-result-screen-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 350px) {
+    .flip-match-result-screen {
+        width: 220px;
+    }
 }
