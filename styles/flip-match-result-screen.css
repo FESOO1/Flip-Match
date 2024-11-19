@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+    box-shadow: 0 0 150px black;
     border-top: 1px solid rgba(255,255,255,0.08);
     border-bottom: 1px solid rgba(255,255,255,0.02);
     transition: top 500ms;
