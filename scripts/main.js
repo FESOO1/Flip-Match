@@ -35,6 +35,13 @@ function startTheGame() {
                         console.log('Found');
                         cardCliked = 0;
                         savedValues = [];
+                        for (const flipMatchCardItselfs of flipMatchCardsContainer.children) {
+                            if (flipMatchCardItselfs.classList.contains('flip-match-card-itself-flipped')) {
+                                flipMatchCardItselfs.classList.remove('flip-match-card-itself');
+                                flipMatchCardItselfs.classList.remove('flip-match-card-itself-flipped');
+                                flipMatchCardItselfs.classList.add('flip-match-card-itself-found');
+                            };
+                        };
                     } else {
                         console.log('Not Found');
                         cardCliked = 0;

@@ -98,3 +98,21 @@ body::before {
 .flip-match-card-itself-flipped > .flip-match-card-itself-image {
     opacity: 1;
 }
+
+.flip-match-card-itself-found {
+    background-color: rgb(40, 40, 40);
+    border-radius: 0.5rem;
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+    transform: rotateY(0deg);
+    overflow: hidden;
+    transition: transform 200ms, background-color 200ms;
+}
+
+.flip-match-card-itself-found > .flip-match-card-itself-image {
+    opacity: 1;
+}
