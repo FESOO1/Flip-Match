@@ -16,6 +16,10 @@
 
 /* FLIP MATCH CONTORLS HEADER CONTAINER */
 
+/* .flip-match-controls-header-container {
+    color: white;
+} */
+
 .flip-match-controls-header-itself {
     color: white;
     font-family: mainHeader;
@@ -140,4 +144,27 @@
 
 .flip-match-control-mode-itself:hover {
     background-color: rgb(15, 15, 15);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 800px) {
+    .flip-match-controls-header-itself {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .flip-match-controls-header-itself {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .flip-match-control-buttons-container {
+        width: calc(100% - 20px);
+    }
+    .flip-match-controls-header-container {
+        padding-inline: 20px;
+    }
 }
