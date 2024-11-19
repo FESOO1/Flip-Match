@@ -175,26 +175,3 @@ nextLevelButton.addEventListener('click', nextLevelFunction);
 prevLevelButton.addEventListener('click', previousLevelFunction);
 replayLevelButton.addEventListener('click', replayLevelFunction);
 modesButton.addEventListener('click', gameModesFunction);
-
-
-
-
-
-
-
-
-
-// 
-
-function data(element) {
-    return `
-        <button type="button" value="" class="flip-match-card-itself">
-            <div class="flip-match-card-itself-image">
-                <img class="flip-match-card-itself-image-itself" src="">
-            </div>
-        </button>
-    `;
-};
-
-
-console.log(data().querySelectorAll('flip-match-card-itself'));
