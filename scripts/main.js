@@ -1,7 +1,1 @@
-const flipMatchCardItself = document.querySelector('.flip-match-card-itself');
-
-// 
-
-flipMatchCardItself.addEventListener('click', () => {
-    flipMatchCardItself.classList.toggle('flip-match-card-itself-flipped');
-});
+const cardsCountArray = ['4','9','16','25'];
