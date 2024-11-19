@@ -3,6 +3,8 @@ const nextButton = document.getElementById('nextButton');
 const startGameButton = document.getElementById('startGameButton');
 const cardsCountArray = ['4','8','16','24'];
 const flipMatchCardsContainerGrid = ['2','3','4','5'];
+const foundMatches = ['2','4','8','12'];
+let foundMatchesCounter = 0;
 const natureCardValues = ['nature-one','nature-one','nature-two','nature-two','nature-three','nature-three','nature-four','nature-four','nature-five','nature-five','nature-six','nature-six','nature-seven','nature-seven','nature-eight','nature-eight','nature-nine','nature-nine','nature-ten','nature-ten','nature-eleven','nature-eleven','nature-twelve','nature-twelve']
 const natureCardImages = ['../assets/pictures/nature/nature-one.jpg','../assets/pictures/nature/nature-one.jpg','../assets/pictures/nature/nature-two.jpg','../assets/pictures/nature/nature-two.jpg', '../assets/pictures/nature/nature-three.jpg','../assets/pictures/nature/nature-three.jpg','../assets/pictures/nature/nature-four.jpg','../assets/pictures/nature/nature-four.jpg','../assets/pictures/nature/nature-five.jpg','../assets/pictures/nature/nature-five.jpg','../assets/pictures/nature/nature-six.jpg','../assets/pictures/nature/nature-six.jpg','../assets/pictures/nature/nature-seven.jpg','../assets/pictures/nature/nature-seven.jpg','../assets/pictures/nature/nature-eight.jpg','../assets/pictures/nature/nature-eight.jpg','../assets/pictures/nature/nature-nine.jpg','../assets/pictures/nature/nature-nine.jpg','../assets/pictures/nature/nature-ten.jpg','../assets/pictures/nature/nature-ten.jpg','../assets/pictures/nature/nature-eleven.jpg','../assets/pictures/nature/nature-eleven.jpg','../assets/pictures/nature/nature-twelve.jpg','../assets/pictures/nature/nature-twelve.jpg'];
 let levelCounter = 0;
@@ -41,6 +43,11 @@ function startTheGame() {
                                 flipMatchCardItselfs.classList.remove('flip-match-card-itself-flipped');
                                 flipMatchCardItselfs.classList.add('flip-match-card-itself-found');
                             };
+                        };
+                        foundMatchesCounter++;
+                        if (foundMatchesCounter === Number.parseInt(foundMatches[levelCounter], 10)) {
+                            alert('You won. So you can go to next level now.');
+                            foundMatchesCounter = 0;
                         };
                     } else {
                         console.log('Not Found');
