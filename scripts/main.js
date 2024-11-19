@@ -7,6 +7,7 @@ const natureCardValues = ['nature-one','nature-one','nature-two','nature-two','n
 const natureCardImages = ['../assets/pictures/nature/nature-one.jpg','../assets/pictures/nature/nature-one.jpg','../assets/pictures/nature/nature-two.jpg','../assets/pictures/nature/nature-two.jpg', '../assets/pictures/nature/nature-three.jpg','../assets/pictures/nature/nature-three.jpg','../assets/pictures/nature/nature-four.jpg','../assets/pictures/nature/nature-four.jpg','../assets/pictures/nature/nature-five.jpg','../assets/pictures/nature/nature-five.jpg','../assets/pictures/nature/nature-six.jpg','../assets/pictures/nature/nature-six.jpg','../assets/pictures/nature/nature-seven.jpg','../assets/pictures/nature/nature-seven.jpg','../assets/pictures/nature/nature-eight.jpg','../assets/pictures/nature/nature-eight.jpg','../assets/pictures/nature/nature-nine.jpg','../assets/pictures/nature/nature-nine.jpg','../assets/pictures/nature/nature-ten.jpg','../assets/pictures/nature/nature-ten.jpg','../assets/pictures/nature/nature-eleven.jpg','../assets/pictures/nature/nature-eleven.jpg','../assets/pictures/nature/nature-twelve.jpg','../assets/pictures/nature/nature-twelve.jpg'];
 let levelCounter = 0;
 let cardCliked = 0;
+let savedValues = [];
 
 // START THE GAME
 
@@ -28,8 +29,17 @@ function startTheGame() {
             flipMatchCardItself[i].addEventListener('click', () => {
                 cardCliked++;
                 flipMatchCardItself[i].classList.add('flip-match-card-itself-flipped');
+                savedValues.push(flipMatchCardItself[i].value);
                 if (cardCliked === 2) {
-
+                    if (savedValues[0] === flipMatchCardItself[i].value) {
+                        alert('Found');
+                        cardCliked = 0;
+                        savedValues = [];
+                    } else {
+                        alert('Not Found');
+                        cardCliked = 0;
+                        savedValues = [];
+                    };
                 };
             });
         };
