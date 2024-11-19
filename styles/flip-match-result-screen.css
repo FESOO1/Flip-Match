@@ -22,7 +22,7 @@
     background-color: rgb(23, 23, 23);
     padding: 10px;
     border-radius: 0.5rem;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.08);
 }
 
 .flip-match-result-screen-header {
@@ -63,4 +63,11 @@
 
 .flip-match-result-screen-button-itself:hover {
     background-color: rgb(80,80,80);
+}
+
+.flip-match-result-screen-button-itself:disabled {
+    color: gray;
+    background-color: rgb(30, 30, 30);
+    cursor: not-allowed;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }

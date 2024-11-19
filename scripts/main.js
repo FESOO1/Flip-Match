@@ -1,5 +1,4 @@
 const flipMatchCardsContainer = document.querySelector('.flip-match-cards-themselves');
-const nextButton = document.getElementById('nextButton');
 const startGameButton = document.getElementById('startGameButton');
 const cardsCountArray = ['4','8','16','24'];
 const flipMatchCardsContainerGrid = ['2','3','4','5'];
@@ -10,6 +9,15 @@ const natureCardImages = ['../assets/pictures/nature/nature-one.jpg','../assets/
 let levelCounter = 0;
 let cardCliked = 0;
 let savedValues = [];
+
+// RESULT MENU VARIABLES
+const prevLevelButton = document.getElementById('prevLevelButton');
+const nextLevelButton = document.getElementById('nextLevelButton');
+const replayLevelButton = document.getElementById('replayLevelButton');
+const flipMatchResultHeader = document.querySelector('.flip-match-result-screen-header');
+const flipMatchResultScreenContainer = document.querySelector('.flip-match-result-screen');
+const flipMatchResultHeaderArray = ['','Victory Achieved! Get Ready for the Next Level.','Level Up! On to the Next Challenge.','Final Stage Unlocked: Conquer Level Four!'];
+
 
 // START THE GAME
 
