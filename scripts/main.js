@@ -99,6 +99,11 @@ async function startTheGame() {
                 };
             });
         };
+
+        // RANDOMNESS
+        for (const flipMatchCardItselfs of flipMatchCardItself) {
+            flipMatchCardItselfs.style.order = Math.floor(Math.random() * cardsCountArray[levelCounter]);
+        };
     };
 };
 
