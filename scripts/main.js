@@ -9,6 +9,7 @@ const natureCardImages = ['../assets/pictures/nature/nature-one.jpg','../assets/
 let levelCounter = 0;
 let cardCliked = 0;
 let savedValues = [];
+let isPlaying = false;
 
 // RESULT MENU VARIABLES
 const prevLevelButton = document.getElementById('prevLevelButton');
@@ -17,11 +18,12 @@ const replayLevelButton = document.getElementById('replayLevelButton');
 const flipMatchResultHeader = document.querySelector('.flip-match-result-screen-header');
 const flipMatchResultScreenContainer = document.querySelector('.flip-match-result-screen');
 const flipMatchResultHeaderArray = ['Congratulations! You Won!','Victory Achieved! Get Ready for the Next Level.','Level Up! On to the Next Challenge.','Final Stage Unlocked: Conquer Level Four!'];
-console.log(flipMatchResultHeaderArray[0])
 
 // START THE GAME
 
 function startTheGame() {
+    isPlaying = true;
+
     for (let i = 0; i < cardsCountArray[levelCounter]; i++) {
         flipMatchCardsContainer.innerHTML += `
             <button type="button" value="${natureCardValues[i]}" class="flip-match-card-itself">
@@ -54,8 +56,12 @@ function startTheGame() {
                         };
                         foundMatchesCounter++;
                         if (foundMatchesCounter === Number.parseInt(foundMatches[levelCounter], 10)) {
-                            alert('You won. So you can go to next level now.');
-                            foundMatchesCounter = 0;
+                            isPlaying = false;
+                            setTimeout(() => {
+                                nextLevelButton.disabled = false;
+                                flipMatchResultScreenContainer.classList.add('flip-match-result-screen-active');
+                                foundMatchesCounter = 0;
+                            }, 300);
                         };
                     } else {
                         console.log('Not Found');
@@ -76,7 +82,17 @@ function startTheGame() {
 
 // RESULT MENU FUNCTION
 
-nextButton.addEventListener('click', () => {
+function replayLevelFunction() {
+    flipMatchCardsContainer.style.gridTemplateColumns = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
+    flipMatchCardsContainer.style.gridTemplateRows = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
+    flipMatchCardsContainer.innerHTML = null;
+    startTheGame();
+
+    // RESULT MENU
+    flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
+};
+
+function nextLevelFunction() {
     levelCounter++;
     flipMatchCardsContainer.style.gridTemplateColumns = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
     flipMatchCardsContainer.style.gridTemplateRows = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
@@ -85,14 +101,36 @@ nextButton.addEventListener('click', () => {
 
     // DISABLING THE NEXT BUTTON WHEN LEVEL IS EQUAL TO THE LAST LEVEL OF THE GAME
     if (levelCounter === cardsCountArray.length - 1) {
-        nextButton.disabled = true;
+        nextLevelButton.disabled = true;
         for (const flipMatchItself of flipMatchCardsContainer.children) {
             flipMatchItself.style.padding = '2px 3px';
         };
     };
-});
 
+    // RESULT MENU
+    prevLevelButton.disabled = false;
+    flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
+};
+
+function previousLevelFunction() {
+    levelCounter--;
+    flipMatchCardsContainer.style.gridTemplateColumns = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
+    flipMatchCardsContainer.style.gridTemplateRows = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
+    flipMatchCardsContainer.innerHTML = null;
+    startTheGame();
+    
+    // DISABLING THE NEXT BUTTON WHEN LEVEL IS EQUAL TO THE LAST LEVEL OF THE GAME
+    if (levelCounter === 0) {
+        prevLevelButton.disabled = true;
+    };
+    
+    // RESULT MENU
+    nextLevelButton.disabled = false;
+    flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');      
+};
 
 // INITIALIZING BUTTONS
-
 startGameButton.addEventListener('click', startTheGame);
+nextLevelButton.addEventListener('click', nextLevelFunction);
+prevLevelButton.addEventListener('click', previousLevelFunction);
+replayLevelButton.addEventListener('click', replayLevelFunction);

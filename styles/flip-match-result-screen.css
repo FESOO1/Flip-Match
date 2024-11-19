@@ -2,9 +2,10 @@
 
 .flip-match-result-screen {
     position: absolute;
-    top: 50%;
+    top: -50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 999;
     width: 400px;
     background-color: rgb(40, 40, 40);
     border-radius: 1rem;
@@ -14,6 +15,11 @@
     row-gap: 10px;
     border-top: 1px solid rgba(255,255,255,0.08);
     border-bottom: 1px solid rgba(255,255,255,0.02);
+    transition: top 500ms;
+}
+
+.flip-match-result-screen-active {
+    top: 50%;
 }
 
 /* FLIP MATCH RESULT SCREEN HEADER */
