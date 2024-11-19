@@ -27,6 +27,9 @@ const flipMatchModeButtonItself = document.querySelectorAll('.flip-match-control
 const modesButton = document.getElementById('modesButton');
 const cardImages = ['natureCardImages', 'cartoonCardImages', 'animalsCardImages'];
 let cardImagesCounter = 0;
+const playMusicButton = document.getElementById('playMusicButton');
+const flipMatchMusic = document.querySelector('.flip-match-music');
+let isOn = false;
 
 // FLIP MATCH VARIABLES
 
@@ -158,6 +161,20 @@ function gameModesFunction() {
     modesButton.classList.toggle('flip-match-control-mode-button-itself-open');
 };
 
+function playMusicFunction() {
+    if (isOn === false) {
+        flipMatchMusic.play();
+        playMusicButton.textContent = 'MUSIC : ON';
+
+        isOn = true;
+    } else {
+        flipMatchMusic.pause();
+        playMusicButton.textContent = 'MUSIC : OFF';
+
+        isOn = false;
+    };
+};
+
 // FLIP MATCH MODE BUTTON ITSELF
 
 for (let i = 0; i < flipMatchModeButtonItself.length; i++) {
@@ -175,3 +192,4 @@ nextLevelButton.addEventListener('click', nextLevelFunction);
 prevLevelButton.addEventListener('click', previousLevelFunction);
 replayLevelButton.addEventListener('click', replayLevelFunction);
 modesButton.addEventListener('click', gameModesFunction);
+playMusicButton.addEventListener('click', playMusicFunction);

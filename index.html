@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/flip-card-controls.css">
     <link rel="stylesheet" href="./styles/flip-match-result-screen.css">
+    <link rel="stylesheet" href="./styles/flip-match-music.css">
 </head>
 <body>
     <div class="flip-match-container">
+        <!-- FLIP MATCH MUSIC -->
+        <audio src="./assets/music/music.mp4" class="flip-match-music"></audio>
+        <!-- <iframe class="flip-match-music" width="916" height="515" src="https://www.youtube.com/embed/1ZYbU82GVz4" title="Flying: Relaxing Sleep Music for Meditation, Stress Relief &amp; Relaxation by Peder B. Helland" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+
         <!-- FLIP MATCH CONTORLS -->
         <div class="flip-match-controls">
             <div class="flip-match-controls-header-container">
@@ -18,7 +23,7 @@
             </div>
             <div class="flip-match-control-buttons-container">
                 <button type="button" class="flip-match-control-button-itself" id="startGameButton">START</button>
-                <button type="button" class="flip-match-control-button-itself">MUSIC : ON</button>
+                <button type="button" class="flip-match-control-button-itself" id="playMusicButton">MUSIC : OFF</button>
                 <div class="flip-match-control-mode-button-container">
                     <button class="flip-match-control-mode-button-itself" id="modesButton">MODES:</button>
                     <div class="flip-match-control-modes-themselves">
