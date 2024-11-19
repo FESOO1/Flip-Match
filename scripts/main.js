@@ -44,7 +44,7 @@ function startTheGame() {
                 savedValues.push(flipMatchCardItself[i].value);
                 if (cardCliked === 2) {
                     if (savedValues[0] === flipMatchCardItself[i].value) {
-                        console.log('Found');
+                        /* console.log('Found'); */
                         cardCliked = 0;
                         savedValues = [];
                         for (const flipMatchCardItselfs of flipMatchCardsContainer.children) {
@@ -64,7 +64,7 @@ function startTheGame() {
                             }, 300);
                         };
                     } else {
-                        console.log('Not Found');
+                        /* console.log('Not Found'); */
                         cardCliked = 0;
                         savedValues = [];
                         setTimeout(() => {
