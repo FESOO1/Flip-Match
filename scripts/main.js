@@ -25,6 +25,7 @@ const flipMatchControlsContainer = document.querySelector('.flip-match-controls'
 const flipMatchModeButtonContainer = document.querySelector('.flip-match-control-mode-button-container');
 const flipMatchModeButtonItself = document.querySelectorAll('.flip-match-control-mode-itself');
 const modesButton = document.getElementById('modesButton');
+const cardImages = ['natureCardImages', 'cartoonCardImages', 'animalsCardImages'];
 
 // FLIP MATCH VARIABLES
 
