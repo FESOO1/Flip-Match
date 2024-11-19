@@ -31,20 +31,6 @@ const modesButton = document.getElementById('modesButton');
 function startTheGame() {
     isPlaying = true;
 
-
-    // FLIP MATCH MODE BUTTON ITSELF
-
-    for (let i = 0; i < flipMatchModeButtonItself.length; i++) {
-        flipMatchModeButtonItself[i].addEventListener('click', () => {
-            for (const flipMatchModeButtonItselfs of flipMatchModeButtonItself) {
-                flipMatchModeButtonItselfs.classList.remove('flip-match-control-mode-itself-active');
-            };
-            flipMatchModeButtonItself[i].classList.add('flip-match-control-mode-itself-active');
-        });
-    };
-
-    // 
-
     for (let i = 0; i < cardsCountArray[levelCounter]; i++) {
         flipMatchCardsContainer.innerHTML += `
             <button type="button" value="${natureCardValues[i]}" class="flip-match-card-itself">
@@ -156,6 +142,17 @@ function previousLevelFunction() {
 function gameModesFunction() {
     flipMatchModeButtonContainer.classList.toggle('flip-match-control-mode-button-container-active');
     modesButton.classList.toggle('flip-match-control-mode-button-itself-open');
+};
+
+// FLIP MATCH MODE BUTTON ITSELF
+
+for (let i = 0; i < flipMatchModeButtonItself.length; i++) {
+    flipMatchModeButtonItself[i].addEventListener('click', () => {
+        for (const flipMatchModeButtonItselfs of flipMatchModeButtonItself) {
+            flipMatchModeButtonItselfs.classList.remove('flip-match-control-mode-itself-active');
+        };
+        flipMatchModeButtonItself[i].classList.add('flip-match-control-mode-itself-active');
+    });
 };
 
 // INITIALIZING BUTTONS
