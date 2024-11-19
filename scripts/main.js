@@ -106,7 +106,7 @@ function nextLevelFunction() {
             flipMatchItself.style.padding = '2px 3px';
         };
     };
-
+    
     // RESULT MENU
     prevLevelButton.disabled = false;
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
