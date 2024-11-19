@@ -16,8 +16,8 @@ const nextLevelButton = document.getElementById('nextLevelButton');
 const replayLevelButton = document.getElementById('replayLevelButton');
 const flipMatchResultHeader = document.querySelector('.flip-match-result-screen-header');
 const flipMatchResultScreenContainer = document.querySelector('.flip-match-result-screen');
-const flipMatchResultHeaderArray = ['','Victory Achieved! Get Ready for the Next Level.','Level Up! On to the Next Challenge.','Final Stage Unlocked: Conquer Level Four!'];
-
+const flipMatchResultHeaderArray = ['Congratulations! You Won!','Victory Achieved! Get Ready for the Next Level.','Level Up! On to the Next Challenge.','Final Stage Unlocked: Conquer Level Four!'];
+console.log(flipMatchResultHeaderArray[0])
 
 // START THE GAME
 
@@ -72,6 +72,9 @@ function startTheGame() {
         };
     };
 };
+
+
+// RESULT MENU FUNCTION
 
 nextButton.addEventListener('click', () => {
     levelCounter++;
