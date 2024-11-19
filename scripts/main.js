@@ -140,6 +140,7 @@ function previousLevelFunction() {
 
 function gameModesFunction() {
     flipMatchModeButtonContainer.classList.toggle('flip-match-control-mode-button-container-active');
+    modesButton.classList.toggle('flip-match-control-mode-button-itself-open');
 };
 
 // INITIALIZING BUTTONS
