@@ -19,6 +19,12 @@ const flipMatchResultHeader = document.querySelector('.flip-match-result-screen-
 const flipMatchResultScreenContainer = document.querySelector('.flip-match-result-screen');
 const flipMatchResultHeaderArray = ['Congratulations! You Won!','Victory Achieved! Get Ready for the Next Level.','Level Up! On to the Next Challenge.','Final Stage Conquered!'];
 
+// CONTROLS VARIABLES
+
+const flipMatchControlsContainer = document.querySelector('.flip-match-controls');
+const modesButton = document.getElementById('modesButton');
+const flipMatchModeButtonContainer = document.querySelector('.flip-match-control-mode-button-container');
+
 // START THE GAME
 
 function startTheGame() {
@@ -130,8 +136,15 @@ function previousLevelFunction() {
     flipMatchResultHeader.textContent = flipMatchResultHeaderArray[levelCounter];      
 };
 
+// CONTROLS FUNCTIONS
+
+function gameModesFunction() {
+    flipMatchModeButtonContainer.classList.toggle('flip-match-control-mode-button-container-active');
+};
+
 // INITIALIZING BUTTONS
 startGameButton.addEventListener('click', startTheGame);
 nextLevelButton.addEventListener('click', nextLevelFunction);
 prevLevelButton.addEventListener('click', previousLevelFunction);
 replayLevelButton.addEventListener('click', replayLevelFunction);
+modesButton.addEventListener('click', gameModesFunction);
