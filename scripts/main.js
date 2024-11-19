@@ -35,7 +35,8 @@ const flipMatchContainer = document.querySelector('.flip-match');
 function startTheGame() {
     isPlaying = true;
 
-    // 
+    // MAKING THE CONTROLS DISAPPEAR
+    flipMatchControlsContainer.style.display = 'none';
 
     // CREATING AS MANY ELEMENTS AS WE NEED
 
