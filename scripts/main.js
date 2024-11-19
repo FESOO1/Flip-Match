@@ -22,13 +22,28 @@ const flipMatchResultHeaderArray = ['Congratulations! You Won!','Victory Achieve
 // CONTROLS VARIABLES
 
 const flipMatchControlsContainer = document.querySelector('.flip-match-controls');
-const modesButton = document.getElementById('modesButton');
 const flipMatchModeButtonContainer = document.querySelector('.flip-match-control-mode-button-container');
+const flipMatchModeButtonItself = document.querySelectorAll('.flip-match-control-mode-itself');
+const modesButton = document.getElementById('modesButton');
 
 // START THE GAME
 
 function startTheGame() {
     isPlaying = true;
+
+
+    // FLIP MATCH MODE BUTTON ITSELF
+
+    for (let i = 0; i < flipMatchModeButtonItself.length; i++) {
+        flipMatchModeButtonItself[i].addEventListener('click', () => {
+            for (const flipMatchModeButtonItselfs of flipMatchModeButtonItself) {
+                flipMatchModeButtonItselfs.classList.remove('flip-match-control-mode-itself-active');
+            };
+            flipMatchModeButtonItself[i].classList.add('flip-match-control-mode-itself-active');
+        });
+    };
+
+    // 
 
     for (let i = 0; i < cardsCountArray[levelCounter]; i++) {
         flipMatchCardsContainer.innerHTML += `
