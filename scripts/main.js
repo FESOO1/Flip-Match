@@ -17,7 +17,7 @@ const nextLevelButton = document.getElementById('nextLevelButton');
 const replayLevelButton = document.getElementById('replayLevelButton');
 const flipMatchResultHeader = document.querySelector('.flip-match-result-screen-header');
 const flipMatchResultScreenContainer = document.querySelector('.flip-match-result-screen');
-const flipMatchResultHeaderArray = ['Congratulations! You Won!','Victory Achieved! Get Ready for the Next Level.','Level Up! On to the Next Challenge.','Final Stage Unlocked: Conquer Level Four!'];
+const flipMatchResultHeaderArray = ['Congratulations! You Won!','Victory Achieved! Get Ready for the Next Level.','Level Up! On to the Next Challenge.','Final Stage Conquered!'];
 
 // START THE GAME
 
@@ -109,6 +109,7 @@ function nextLevelFunction() {
     // RESULT MENU
     prevLevelButton.disabled = false;
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
+    flipMatchResultHeader.textContent = flipMatchResultHeaderArray[levelCounter];
 };
 
 function previousLevelFunction() {
@@ -125,7 +126,8 @@ function previousLevelFunction() {
     
     // RESULT MENU
     nextLevelButton.disabled = false;
-    flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');      
+    flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
+    flipMatchResultHeader.textContent = flipMatchResultHeaderArray[levelCounter];      
 };
 
 // INITIALIZING BUTTONS
