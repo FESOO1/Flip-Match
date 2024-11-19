@@ -87,12 +87,12 @@
     align-items: center;
 }
 
-.flip-match-control-mode-button-itself:hover {
-    background-color: rgb(70, 70, 70);
-}
-
 .flip-match-control-mode-button-itself-open {
     background-color: rgb(50, 50, 50);
+}
+
+.flip-match-control-mode-button-itself:hover {
+    background-color: rgb(70, 70, 70);
 }
 
 /* FLIP MATCH CONTOL MODES THEMSELVES */
