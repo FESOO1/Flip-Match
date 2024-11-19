@@ -62,7 +62,7 @@ body::before {
     padding: 5px;
     cursor: pointer;
     position: relative;
-    /* transform: rotateY(180deg); */
+    transform: rotateY(180deg);
     overflow: hidden;
     transition: transform 500ms, background-color 200ms;
 }
@@ -74,7 +74,7 @@ body::before {
     border-radius: 0.3rem;
     background-color: rgb(10,10,10);
     overflow: hidden;
-    /* opacity: 0; */
+    opacity: 0;
     transition: opacity 100ms;
     transition-delay: 100ms;
 }
