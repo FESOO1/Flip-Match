@@ -26,6 +26,7 @@ const flipMatchModeButtonContainer = document.querySelector('.flip-match-control
 const flipMatchModeButtonItself = document.querySelectorAll('.flip-match-control-mode-itself');
 const modesButton = document.getElementById('modesButton');
 const cardImages = ['natureCardImages', 'cartoonCardImages', 'animalsCardImages'];
+let cardImagesCounter = 0;
 
 // FLIP MATCH VARIABLES
 
@@ -39,7 +40,6 @@ async function startTheGame() {
     // FEATCHING DATA FROM JSON
     const response = await fetch('../data/data.json');
     const imageData = await response.json();  
-    console.log(imageData.natureCardImages);
 
     // MAKING THE CONTROLS DISAPPEAR
     flipMatchControlsContainer.style.display = 'none';
@@ -175,3 +175,26 @@ nextLevelButton.addEventListener('click', nextLevelFunction);
 prevLevelButton.addEventListener('click', previousLevelFunction);
 replayLevelButton.addEventListener('click', replayLevelFunction);
 modesButton.addEventListener('click', gameModesFunction);
+
+
+
+
+
+
+
+
+
+// 
+
+function data(element) {
+    return `
+        <button type="button" value="" class="flip-match-card-itself">
+            <div class="flip-match-card-itself-image">
+                <img class="flip-match-card-itself-image-itself" src="">
+            </div>
+        </button>
+    `;
+};
+
+
+console.log(data().querySelectorAll('flip-match-card-itself'));
