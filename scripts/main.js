@@ -32,8 +32,13 @@ const flipMatchContainer = document.querySelector('.flip-match');
 
 // START THE GAME
 
-function startTheGame() {
+async function startTheGame() {
     isPlaying = true;
+
+    // FEATCHING DATA FROM JSON
+    const response = await fetch('../data/data.json');
+    const imageData = await response.json();  
+    console.log(imageData.natureCardImages);
 
     // MAKING THE CONTROLS DISAPPEAR
     flipMatchControlsContainer.style.display = 'none';
@@ -44,7 +49,7 @@ function startTheGame() {
         flipMatchCardsContainer.innerHTML += `
             <button type="button" value="${natureCardValues[i]}" class="flip-match-card-itself">
                 <div class="flip-match-card-itself-image">
-                    <img class="flip-match-card-itself-image-itself" src="${natureCardImages[i]}">
+                    <img class="flip-match-card-itself-image-itself" src="${imageData.natureCardImages[i]}">
                 </div>
             </button>
         `;
@@ -155,15 +160,6 @@ function gameModesFunction() {
 // FLIP MATCH MODE BUTTON ITSELF
 
 for (let i = 0; i < flipMatchModeButtonItself.length; i++) {
-    // FEATCHING DATA FROM JSON
-    async function retrieveingDataFromJson() {
-        const response = await fetch('../data/data.json');
-        const imageData = await response.json();  
-        console.log(imageData);
-    };
-
-    retrieveingDataFromJson();
-    
     flipMatchModeButtonItself[i].addEventListener('click', () => {
         for (const flipMatchModeButtonItselfs of flipMatchModeButtonItself) {
             flipMatchModeButtonItselfs.classList.remove('flip-match-control-mode-itself-active');
