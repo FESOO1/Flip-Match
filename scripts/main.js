@@ -26,10 +26,18 @@ const flipMatchModeButtonContainer = document.querySelector('.flip-match-control
 const flipMatchModeButtonItself = document.querySelectorAll('.flip-match-control-mode-itself');
 const modesButton = document.getElementById('modesButton');
 
+// FLIP MATCH VARIABLES
+
+const flipMatchContainer = document.querySelector('.flip-match');
+
 // START THE GAME
 
 function startTheGame() {
     isPlaying = true;
+
+    // 
+
+    // CREATING AS MANY ELEMENTS AS WE NEED
 
     for (let i = 0; i < cardsCountArray[levelCounter]; i++) {
         flipMatchCardsContainer.innerHTML += `
@@ -39,7 +47,6 @@ function startTheGame() {
                 </div>
             </button>
         `;
-
 
         // HANDLING THE FLIPPING CARDS
         const flipMatchCardItself = document.querySelectorAll('.flip-match-card-itself');
@@ -146,14 +153,20 @@ function gameModesFunction() {
 
 // FLIP MATCH MODE BUTTON ITSELF
 
-for (let i = 0; i < flipMatchModeButtonItself.length; i++) {
+/* for (let i = 0; i < flipMatchModeButtonItself.length; i++) {
+    // FEATCHING DATA FROM JSON
+    async function retrieveingDataFromJson() {
+        const response = await fetch('../data/data.json');  
+        console.log(response)
+    };
+    
     flipMatchModeButtonItself[i].addEventListener('click', () => {
         for (const flipMatchModeButtonItselfs of flipMatchModeButtonItself) {
             flipMatchModeButtonItselfs.classList.remove('flip-match-control-mode-itself-active');
         };
         flipMatchModeButtonItself[i].classList.add('flip-match-control-mode-itself-active');
     });
-};
+}; */
 
 // INITIALIZING BUTTONS
 startGameButton.addEventListener('click', startTheGame);
