@@ -58,7 +58,6 @@ function startTheGame() {
                         if (foundMatchesCounter === Number.parseInt(foundMatches[levelCounter], 10)) {
                             isPlaying = false;
                             setTimeout(() => {
-                                /* nextLevelButton.disabled = false; */
                                 flipMatchResultScreenContainer.classList.add('flip-match-result-screen-active');
                                 foundMatchesCounter = 0;
                             }, 300);
