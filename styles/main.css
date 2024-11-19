@@ -124,3 +124,9 @@ body::before {
 .flip-match-card-itself-found > .flip-match-card-itself-image {
     opacity: 1;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: ) {
+    
+}
