@@ -120,6 +120,7 @@ body::before {
     transform: rotateY(0deg);
     overflow: hidden;
     transition: transform 200ms, background-color 200ms;
+    pointer-events: none;
 }
 
 .flip-match-card-itself-found > .flip-match-card-itself-image {

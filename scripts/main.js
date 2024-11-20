@@ -78,7 +78,9 @@ async function startTheGame() {
             flipMatchCardItself[i].addEventListener('click', () => {
                 // INCREMENTING THE CARDCLIKED VARIABLE BY ONE SO THAT I CAN KEEP TRACK OF HOW MANY I HAVE CLICKED. CLASSLIST IS ALSO BEING ADDED TO FLIP THE CARD AS WELL AS PUSHING THAT CARD'S VALUE INTO AN ARRAY SO THAT I CAN COMPARE THEM WHEN I CLICK ON THE SECOND CARD.
                 cardClicked++;
+                console.log(cardClicked);
                 flipMatchCardItself[i].classList.add('flip-match-card-itself-flipped');
+                flipMatchCardItself[i].disabled = true;
                 savedValues.push(flipMatchCardItself[i].value);
 
                 // WHEN TWO CARDS ARE CLICKED:
@@ -96,6 +98,7 @@ async function startTheGame() {
                             if (flipMatchCardItselfs.classList.contains('flip-match-card-itself-flipped')) {
                                 flipMatchCardItselfs.classList.remove('flip-match-card-itself');
                                 flipMatchCardItselfs.classList.remove('flip-match-card-itself-flipped');
+                                flipMatchCardItselfs.disabled = false;
                                 flipMatchCardItselfs.classList.add('flip-match-card-itself-found');
                             };
                         };
@@ -123,6 +126,7 @@ async function startTheGame() {
                         savedValues = [];
                         setTimeout(() => {
                             for (const flipMatchCardItselfs of flipMatchCardItself) {
+                                flipMatchCardItselfs.disabled = false;
                                 flipMatchCardItselfs.classList.remove('flip-match-card-itself-flipped');  
                             };   
                         }, 300);                
