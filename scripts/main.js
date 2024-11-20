@@ -140,7 +140,8 @@ async function startTheGame() {
                     } else {
 
                         // MAKING A SOUND TO LET A USER KNOW THAT IT IS NOT A MATCH
-                        flipMatchMusic.src = wrongSounds[Math.floor(Math.random() * 5)];
+                        /* flipMatchMusic.src = wrongSounds[Math.floor(Math.random() * 5)]; */
+                        flipMatchMusic.src = './assets/music/wrong.mp3'
                         flipMatchMusic.play();
 
                         // IF IT IS NOT A MATCH, WE WILL EMPTY THE ARRAY AND UNFLIPP ALL THE CARDS.
