@@ -192,7 +192,9 @@ function previousLevelFunction() {
 };
 
 function goBackToMenuFunction() {
-
+    flipMatchCardsContainer.innerHTML = null;
+    flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
+    flipMatchControlsContainer.classList.add('flip-match-controls-active');
 };
 
 // CONTROLS FUNCTIONS
