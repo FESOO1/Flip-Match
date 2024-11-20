@@ -106,7 +106,7 @@ async function startTheGame() {
                             for (const flipMatchCardItselfs of flipMatchCardItself) {
                                 flipMatchCardItselfs.classList.remove('flip-match-card-itself-flipped');  
                             };   
-                        }, 500);                
+                        }, 300);                
                     };
                 };
             });
