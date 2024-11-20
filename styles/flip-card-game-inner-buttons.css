@@ -1,0 +1,66 @@
+/* FLIP MATCH GAME INNER BUTTONS */
+
+.flip-match-game-inner-buttons {
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* FLIP MATCH GAME MENU BUTTON */
+
+.flip-match-game-menu-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 0.5rem;
+    border: 0;
+    font-size: 1rem;
+    background-color: rgb(60, 60, 60);
+    cursor: pointer;
+    color: white;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 200ms;
+}
+
+.flip-match-game-menu-button-svg {
+    color: white;
+}
+
+.flip-match-game-menu-button:hover {
+    background-color: rgb(80,80,80);
+}
+
+/* FLIP MATCH GAME SOUND BUTTON */
+
+.flip-match-game-sound-button {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.flip-match-game-sound-button-svg {
+    color: white;
+}
+
+.flip-match-game-sound-button-svg-second {
+    color: white;
+    display: none;
+}
+
+.flip-match-game-sound-button:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.flip-match-game-sound-button:active {
+    background-color: rgba(255,255,255,0.05);
+}

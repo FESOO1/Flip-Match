@@ -47,6 +47,7 @@ async function startTheGame() {
 
     // MAKING THE CONTROLS DISAPPEAR
     flipMatchControlsContainer.classList.remove('flip-match-controls-active');
+    flipMatchContainer.classList.add('flip-match-active');
 
     // CREATING AS MANY ELEMENTS AS WE NEED
 
@@ -98,7 +99,6 @@ async function startTheGame() {
                             if (flipMatchCardItselfs.classList.contains('flip-match-card-itself-flipped')) {
                                 flipMatchCardItselfs.classList.remove('flip-match-card-itself');
                                 flipMatchCardItselfs.classList.remove('flip-match-card-itself-flipped');
-                                flipMatchCardItselfs.disabled = false;
                                 flipMatchCardItselfs.classList.add('flip-match-card-itself-found');
                             };
                         };
@@ -200,6 +200,7 @@ function goBackToMenuFunction() {
     flipMatchCardsContainer.innerHTML = null;
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
     flipMatchControlsContainer.classList.add('flip-match-controls-active');
+    flipMatchContainer.classList.remove('flip-match-active');
     levelCounter = 0;
     prevLevelButton.disabled = true;
     flipMatchCardsContainer.style.gridTemplateColumns = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
