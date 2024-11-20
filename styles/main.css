@@ -43,11 +43,11 @@ body::before {
     padding-block: 50px;
     min-height: 100vh;
     display: none;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
+    row-gap: 40px;
 }
 
 .flip-match-active {

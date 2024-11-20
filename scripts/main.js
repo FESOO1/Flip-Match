@@ -33,8 +33,11 @@ let isOn = false;
 let savedMode = 'nature-mode';
 
 // FLIP MATCH VARIABLES
-
 const flipMatchContainer = document.querySelector('.flip-match');
+
+// FLIP MATCH GAME BUTTONS
+const flipMatchGameMenuButton = document.getElementById('flipMatchGameMenuButton');
+const flipMatchGameSoundButton = document.getElementById('flipMatchGameSoundButton');
 
 // START THE GAME
 
@@ -215,15 +218,17 @@ function gameModesFunction() {
 };
 
 function playMusicFunction() {
+    flipMatchMusic.volume = 0.5;
     if (isOn === false) {
         flipMatchMusic.play();
-        flipMatchMusic.volume = 0.5;
         playMusicButton.textContent = 'MUSIC : ON';
+        flipMatchGameSoundButton.classList.add('flip-match-game-sound-button-on');
 
         isOn = true;
     } else {
         flipMatchMusic.pause();
         playMusicButton.textContent = 'MUSIC : OFF';
+        flipMatchGameSoundButton.classList.remove('flip-match-game-sound-button-on');
 
         isOn = false;
     };
@@ -249,4 +254,6 @@ prevLevelButton.addEventListener('click', previousLevelFunction);
 replayLevelButton.addEventListener('click', replayLevelFunction);
 modesButton.addEventListener('click', gameModesFunction);
 playMusicButton.addEventListener('click', playMusicFunction);
+flipMatchGameSoundButton.addEventListener('click', playMusicFunction);
 backToMenuButton.addEventListener('click', goBackToMenuFunction);
+flipMatchGameMenuButton.addEventListener('click', goBackToMenuFunction);

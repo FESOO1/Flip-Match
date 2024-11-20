@@ -64,3 +64,11 @@
 .flip-match-game-sound-button:active {
     background-color: rgba(255,255,255,0.05);
 }
+
+.flip-match-game-sound-button-on > .flip-match-game-sound-button-svg {
+    display: none;
+}
+
+.flip-match-game-sound-button-on > .flip-match-game-sound-button-svg-second {
+    display: block;
+}
