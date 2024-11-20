@@ -65,7 +65,7 @@ async function startTheGame() {
 
         // CHECKING IF THE SAVEDMODE'S VALUE CHANGED TO ANY OF THE FLIP MATCH BUTTONS' VALU, IF SO THE PICTURES WILL BE CHANGES BASED ON THE VALUE
         if (savedMode === flipMatchModeButtonItself[0].value) {
-            flipMatchCardItselfImagesItself[i].setAttribute('src', imageData.natureCardImages[i]);
+            flipMatchCardItselfImagesItself[i].src = imageData.natureCardImages[i];
         } else if (savedMode === flipMatchModeButtonItself[1].value) {
             flipMatchCardItselfImagesItself[i].src = imageData.cartoonCardImages[i];
         } else {
@@ -192,9 +192,13 @@ function previousLevelFunction() {
 };
 
 function goBackToMenuFunction() {
+    isPlaying = false;
     flipMatchCardsContainer.innerHTML = null;
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
     flipMatchControlsContainer.classList.add('flip-match-controls-active');
+    levelCounter = 0;
+    flipMatchCardsContainer.style.gridTemplateColumns = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
+    flipMatchCardsContainer.style.gridTemplateRows = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
 };
 
 // CONTROLS FUNCTIONS
