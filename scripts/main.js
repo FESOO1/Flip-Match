@@ -117,6 +117,8 @@ async function startTheGame() {
                             }, 300);
                         };
                     } else {
+                        // IF IT IS NOT A MATCH, WE WILL EMPTY THE ARRAY AND UNFLIPP ALL THE CARDS.
+
                         cardClicked = 0;
                         savedValues = [];
                         setTimeout(() => {
@@ -129,7 +131,7 @@ async function startTheGame() {
             });
         };
 
-        // RANDOMNESS
+        // RANDOMNESS - MAKING SURE ALL THE CARDS ARE IN A RANDOM ORDER.
         for (const flipMatchCardItselfs of flipMatchCardItself) {
             flipMatchCardItselfs.style.order = Math.floor(Math.random() * cardsCountArray[levelCounter]);
         };
