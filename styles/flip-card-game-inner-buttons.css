@@ -50,11 +50,11 @@
 
 .flip-match-game-sound-button-svg {
     color: white;
+    display: none;
 }
 
 .flip-match-game-sound-button-svg-second {
     color: white;
-    display: none;
 }
 
 .flip-match-game-sound-button:hover {
@@ -66,9 +66,9 @@
 }
 
 .flip-match-game-sound-button-on > .flip-match-game-sound-button-svg {
-    display: none;
+    display: block;
 }
 
 .flip-match-game-sound-button-on > .flip-match-game-sound-button-svg-second {
-    display: block;
+    display: none;
 }

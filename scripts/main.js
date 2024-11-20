@@ -93,6 +93,10 @@ async function startTheGame() {
                     // COMPARING THE SAVED VALUE OF THE PREVIOUS CARD TO THE SECOND CLICKED CARD:
                     if (savedValues[0] === flipMatchCardItself[i].value) {
 
+                        // MAKING A SOUND TO LET A USER KNOW THAT IT IS A MATCH
+                        flipMatchMusic.src = '../assets/music/correct.mp3';
+                        flipMatchMusic.play();
+
                         // IF IT IS A MATCH, WE WILL EMPTY THE ARRAY AND CHANGE VALUE OF CARDCLICKED VARIABLE SO THAT I CAN KEEP USING IT.
                         cardClicked = 0;
                         savedValues = [];
@@ -115,6 +119,10 @@ async function startTheGame() {
                             isPlaying = false;
 
                             setTimeout(() => {
+                                // MAKING A SOUND TO LET A USER KNOW THAT IT IS NOT A MATCH
+                                flipMatchMusic.src = '../assets/music/level-up.mp3';
+                                flipMatchMusic.play();
+
                                 // MAKING A MENU POP SO THAT A USER CAN GO TO THE NEXT LEVEL OR REPLAY THE SAME ONE OR GO BACK TO THE PREVIOUS LEVEL AND SO ON.
                                 flipMatchResultScreenContainer.classList.add('flip-match-result-screen-active');
 
@@ -123,6 +131,11 @@ async function startTheGame() {
                             }, 300);
                         };
                     } else {
+
+                        // MAKING A SOUND TO LET A USER KNOW THAT IT IS NOT A MATCH
+                        flipMatchMusic.src = '../assets/music/wrong.mp3';
+                        flipMatchMusic.play();
+
                         // IF IT IS NOT A MATCH, WE WILL EMPTY THE ARRAY AND UNFLIPP ALL THE CARDS.
 
                         cardClicked = 0;
@@ -218,16 +231,15 @@ function gameModesFunction() {
 };
 
 function playMusicFunction() {
-    flipMatchMusic.volume = 0.5;
     if (isOn === false) {
-        flipMatchMusic.play();
-        playMusicButton.textContent = 'MUSIC : ON';
+        flipMatchMusic.volume = 0;
+        playMusicButton.textContent = 'SOUND : OFF';
         flipMatchGameSoundButton.classList.add('flip-match-game-sound-button-on');
 
         isOn = true;
     } else {
-        flipMatchMusic.pause();
-        playMusicButton.textContent = 'MUSIC : OFF';
+        flipMatchMusic.volume = 0.5;
+        playMusicButton.textContent = 'SOUND : ON';
         flipMatchGameSoundButton.classList.remove('flip-match-game-sound-button-on');
 
         isOn = false;
