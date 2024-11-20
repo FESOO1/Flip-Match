@@ -169,8 +169,8 @@ function nextLevelFunction() {
     if (levelCounter === cardsCountArray.length - 1) {
         nextLevelButton.disabled = true;
         for (const flipMatchItself of flipMatchCardsContainer.children) {
-            flipMatchItself.style.padding = '1px';
-            flipMatchItself.style.border = 'none';
+            flipMatchItself.style.padding = '0';
+            flipMatchItself.style.border = '0';
         };
     };
     
