@@ -197,6 +197,7 @@ function goBackToMenuFunction() {
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
     flipMatchControlsContainer.classList.add('flip-match-controls-active');
     levelCounter = 0;
+    prevLevelButton.disabled = true;
     flipMatchCardsContainer.style.gridTemplateColumns = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
     flipMatchCardsContainer.style.gridTemplateRows = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
 };
