@@ -39,6 +39,13 @@ const flipMatchContainer = document.querySelector('.flip-match');
 const flipMatchGameMenuButton = document.getElementById('flipMatchGameMenuButton');
 const flipMatchGameSoundButton = document.getElementById('flipMatchGameSoundButton');
 
+// SOUNDS
+
+const correctSounds = [''];
+const wrongSounds = [''];
+const levelUpSounds = [''];
+const winningSounds = [''];
+
 // START THE GAME
 
 async function startTheGame() {

@@ -126,6 +126,13 @@ body::before {
     overflow: hidden;
     transition: transform 200ms, background-color 200ms;
     pointer-events: none;
+    animation: 400ms forwards flip-match-card-itself-found-animation;
+    animation-delay: 200ms;
+}
+
+@keyframes flip-match-card-itself-found-animation {
+    50%{scale: 0.9;}
+    100%{scale: 1;}
 }
 
 .flip-match-card-itself-found > .flip-match-card-itself-image {
