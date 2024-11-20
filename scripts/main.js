@@ -7,7 +7,7 @@ let foundMatchesCounter = 0;
 const natureCardValues = ['nature-one','nature-one','nature-two','nature-two','nature-three','nature-three','nature-four','nature-four','nature-five','nature-five','nature-six','nature-six','nature-seven','nature-seven','nature-eight','nature-eight','nature-nine','nature-nine','nature-ten','nature-ten','nature-eleven','nature-eleven','nature-twelve','nature-twelve']
 const natureCardImages = ['../assets/pictures/nature/nature-one.jpg','../assets/pictures/nature/nature-one.jpg','../assets/pictures/nature/nature-two.jpg','../assets/pictures/nature/nature-two.jpg', '../assets/pictures/nature/nature-three.jpg','../assets/pictures/nature/nature-three.jpg','../assets/pictures/nature/nature-four.jpg','../assets/pictures/nature/nature-four.jpg','../assets/pictures/nature/nature-five.jpg','../assets/pictures/nature/nature-five.jpg','../assets/pictures/nature/nature-six.jpg','../assets/pictures/nature/nature-six.jpg','../assets/pictures/nature/nature-seven.jpg','../assets/pictures/nature/nature-seven.jpg','../assets/pictures/nature/nature-eight.jpg','../assets/pictures/nature/nature-eight.jpg','../assets/pictures/nature/nature-nine.jpg','../assets/pictures/nature/nature-nine.jpg','../assets/pictures/nature/nature-ten.jpg','../assets/pictures/nature/nature-ten.jpg','../assets/pictures/nature/nature-eleven.jpg','../assets/pictures/nature/nature-eleven.jpg','../assets/pictures/nature/nature-twelve.jpg','../assets/pictures/nature/nature-twelve.jpg'];
 let levelCounter = 0;
-let cardCliked = 0;
+let cardClicked = 0;
 let savedValues = [];
 let isPlaying = false;
 
@@ -62,6 +62,7 @@ async function startTheGame() {
         // CHANGING THE PICTURES BASED ON THE MODE
         const flipMatchCardItselfImagesItself = document.querySelectorAll('.flip-match-card-itself-image-itself');
 
+        // CHECKING IF THE SAVEDMODE'S VALUE CHANGED TO ANY OF THE FLIP MATCH BUTTONS' VALU, IF SO THE PICTURES WILL BE CHANGES BASED ON THE VALUE
         if (savedMode === flipMatchModeButtonItself[0].value) {
             flipMatchCardItselfImagesItself[i].setAttribute('src', imageData.natureCardImages[i]);
         } else if (savedMode === flipMatchModeButtonItself[1].value) {
@@ -70,19 +71,27 @@ async function startTheGame() {
             flipMatchCardItselfImagesItself[i].src = imageData.animalsCardImages[i];
         };
 
-        // HANDLING THE FLIPPING CARDS
+        // HANDLING THE CARDS
         const flipMatchCardItself = document.querySelectorAll('.flip-match-card-itself');
         
         for (let i = 0; i < flipMatchCardItself.length; i++) {
             flipMatchCardItself[i].addEventListener('click', () => {
-                cardCliked++;
+                // INCREMENTING THE CARDCLIKED VARIABLE BY ONE SO THAT I CAN KEEP TRACK OF HOW MANY I HAVE CLICKED. CLASSLIST IS ALSO BEING ADDED TO FLIP THE CARD AS WELL AS PUSHING THAT CARD'S VALUE INTO AN ARRAY SO THAT I CAN COMPARE THEM WHEN I CLICK ON THE SECOND CARD.
+                cardClicked++;
                 flipMatchCardItself[i].classList.add('flip-match-card-itself-flipped');
                 savedValues.push(flipMatchCardItself[i].value);
-                if (cardCliked === 2) {
+
+                // WHEN TWO CARDS ARE CLICKED:
+                if (cardClicked === 2) {
+                    
+                    // COMPARING THE SAVED VALUE OF THE PREVIOUS CARD TO THE SECOND CLICKED CARD:
                     if (savedValues[0] === flipMatchCardItself[i].value) {
-                        /* console.log('Found'); */
-                        cardCliked = 0;
+
+                        // IF IT IS A MATCH, WE WILL EMPTY THE ARRAY AND CHANGE VALUE OF CARDCLICKED VARIABLE SO THAT I CAN KEEP USING IT.
+                        cardClicked = 0;
                         savedValues = [];
+
+                        // REMOVING ALL THE CLASSES FROM THE CARD AND ADDING ANOTHER CLASS SO THAT THE CARDS THAT ARE MATCH STAY FLIPPED.
                         for (const flipMatchCardItselfs of flipMatchCardsContainer.children) {
                             if (flipMatchCardItselfs.classList.contains('flip-match-card-itself-flipped')) {
                                 flipMatchCardItselfs.classList.remove('flip-match-card-itself');
@@ -90,17 +99,25 @@ async function startTheGame() {
                                 flipMatchCardItselfs.classList.add('flip-match-card-itself-found');
                             };
                         };
+
+                        // COUNTING HOM MANY MATCHES ARE FOUND
                         foundMatchesCounter++;
+
+                        // IF FOUND MATCHES ARE EQUAL TO HOW MANY MATCHES ARE THERE
                         if (foundMatchesCounter === Number.parseInt(foundMatches[levelCounter], 10)) {
+                            // STOPPING THE GAME
                             isPlaying = false;
+
                             setTimeout(() => {
+                                // MAKING A MENU POP SO THAT A USER CAN GO TO THE NEXT LEVEL OR REPLAY THE SAME ONE OR GO BACK TO THE PREVIOUS LEVEL AND SO ON.
                                 flipMatchResultScreenContainer.classList.add('flip-match-result-screen-active');
+
+                                // RESETTING THE VARIABLE
                                 foundMatchesCounter = 0;
                             }, 300);
                         };
                     } else {
-                        /* console.log('Not Found'); */
-                        cardCliked = 0;
+                        cardClicked = 0;
                         savedValues = [];
                         setTimeout(() => {
                             for (const flipMatchCardItselfs of flipMatchCardItself) {
