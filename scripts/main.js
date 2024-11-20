@@ -1,11 +1,10 @@
 const flipMatchCardsContainer = document.querySelector('.flip-match-cards-themselves');
 const startGameButton = document.getElementById('startGameButton');
-const cardsCountArray = ['4','8','16','24'];
-const flipMatchCardsContainerGrid = ['2','3','4','5'];
-const foundMatches = ['2','4','8','12'];
+const cardsCountArray = ['4','8','16','24','36'];
+const flipMatchCardsContainerGrid = ['2','3','4','5','6'];
+const foundMatches = ['2','4','8','12', '18'];
 let foundMatchesCounter = 0;
-const natureCardValues = ['nature-one','nature-one','nature-two','nature-two','nature-three','nature-three','nature-four','nature-four','nature-five','nature-five','nature-six','nature-six','nature-seven','nature-seven','nature-eight','nature-eight','nature-nine','nature-nine','nature-ten','nature-ten','nature-eleven','nature-eleven','nature-twelve','nature-twelve']
-const natureCardImages = ['../assets/pictures/nature/nature-one.jpg','../assets/pictures/nature/nature-one.jpg','../assets/pictures/nature/nature-two.jpg','../assets/pictures/nature/nature-two.jpg', '../assets/pictures/nature/nature-three.jpg','../assets/pictures/nature/nature-three.jpg','../assets/pictures/nature/nature-four.jpg','../assets/pictures/nature/nature-four.jpg','../assets/pictures/nature/nature-five.jpg','../assets/pictures/nature/nature-five.jpg','../assets/pictures/nature/nature-six.jpg','../assets/pictures/nature/nature-six.jpg','../assets/pictures/nature/nature-seven.jpg','../assets/pictures/nature/nature-seven.jpg','../assets/pictures/nature/nature-eight.jpg','../assets/pictures/nature/nature-eight.jpg','../assets/pictures/nature/nature-nine.jpg','../assets/pictures/nature/nature-nine.jpg','../assets/pictures/nature/nature-ten.jpg','../assets/pictures/nature/nature-ten.jpg','../assets/pictures/nature/nature-eleven.jpg','../assets/pictures/nature/nature-eleven.jpg','../assets/pictures/nature/nature-twelve.jpg','../assets/pictures/nature/nature-twelve.jpg'];
+const cardValues = ['card-value-one','card-value-one','card-value-two','card-value-two','card-value-three','card-value-three','card-value-four','card-value-four','card-value-five','card-value-five','card-value-six','card-value-six','card-value-seven','card-value-seven','card-value-eight','card-value-eight','card-value-nine','card-value-nine','card-value-ten','card-value-ten','card-value-eleven','card-value-eleven','card-value-twelve','card-value-twelve','card-value-thirteen','card-value-thirteen','card-value-fourteen','card-value-fourteen','card-value-fifteen','card-value-fifteen','card-value-sixteen','card-value-sixteen','card-value-seventeen','card-value-seventeen','card-value-eighteen','card-value-eighteen'];
 let levelCounter = 0;
 let cardClicked = 0;
 let savedValues = [];
@@ -18,7 +17,7 @@ const replayLevelButton = document.getElementById('replayLevelButton');
 const backToMenuButton = document.getElementById('backToMenuButton');
 const flipMatchResultHeader = document.querySelector('.flip-match-result-screen-header');
 const flipMatchResultScreenContainer = document.querySelector('.flip-match-result-screen');
-const flipMatchResultHeaderArray = ['Congratulations! You Won!','Victory Achieved! Get Ready for the Next Level.','Level Up! On to the Next Challenge.','Final Stage Conquered!'];
+const flipMatchResultHeaderArray = ['Amazing! You are Moving to Level 2!','Great Work! Level 3 Awaits!','Fantastic! Level 4 is Ready for You.','Unstoppable! Welcome to the Final Level!', 'Champion! You have Won the Game!'];
 
 // CONTROLS VARIABLES
 
@@ -53,7 +52,7 @@ async function startTheGame() {
 
     for (let i = 0; i < cardsCountArray[levelCounter]; i++) {
         flipMatchCardsContainer.innerHTML += `
-            <button type="button" value="${natureCardValues[i]}" class="flip-match-card-itself">
+            <button type="button" value="${cardValues[i]}" class="flip-match-card-itself">
                 <div class="flip-match-card-itself-image">
                     <img class="flip-match-card-itself-image-itself">
                 </div>
@@ -163,7 +162,8 @@ function nextLevelFunction() {
     if (levelCounter === cardsCountArray.length - 1) {
         nextLevelButton.disabled = true;
         for (const flipMatchItself of flipMatchCardsContainer.children) {
-            flipMatchItself.style.padding = '2px 3px';
+            flipMatchItself.style.padding = '1px';
+            flipMatchItself.style.border = 'none';
         };
     };
     
