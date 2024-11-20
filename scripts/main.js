@@ -15,6 +15,7 @@ let isPlaying = false;
 const prevLevelButton = document.getElementById('prevLevelButton');
 const nextLevelButton = document.getElementById('nextLevelButton');
 const replayLevelButton = document.getElementById('replayLevelButton');
+const backToMenuButton = document.getElementById('backToMenuButton');
 const flipMatchResultHeader = document.querySelector('.flip-match-result-screen-header');
 const flipMatchResultScreenContainer = document.querySelector('.flip-match-result-screen');
 const flipMatchResultHeaderArray = ['Congratulations! You Won!','Victory Achieved! Get Ready for the Next Level.','Level Up! On to the Next Challenge.','Final Stage Conquered!'];
@@ -46,7 +47,7 @@ async function startTheGame() {
     const imageData = await response.json();
 
     // MAKING THE CONTROLS DISAPPEAR
-    flipMatchControlsContainer.style.display = 'none';
+    flipMatchControlsContainer.classList.remove('flip-match-controls-active');
 
     // CREATING AS MANY ELEMENTS AS WE NEED
 
@@ -190,6 +191,10 @@ function previousLevelFunction() {
     flipMatchResultHeader.textContent = flipMatchResultHeaderArray[levelCounter];      
 };
 
+function goBackToMenuFunction() {
+
+};
+
 // CONTROLS FUNCTIONS
 
 function gameModesFunction() {
@@ -232,3 +237,4 @@ prevLevelButton.addEventListener('click', previousLevelFunction);
 replayLevelButton.addEventListener('click', replayLevelFunction);
 modesButton.addEventListener('click', gameModesFunction);
 playMusicButton.addEventListener('click', playMusicFunction);
+backToMenuButton.addEventListener('click', goBackToMenuFunction);

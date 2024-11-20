@@ -7,11 +7,15 @@
     z-index: 1;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     row-gap: 40px;
+}
+
+.flip-match-controls-active {
+    display: flex;
 }
 
 /* FLIP MATCH CONTORLS HEADER CONTAINER */
