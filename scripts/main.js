@@ -42,9 +42,9 @@ const flipMatchGameSoundButton = document.getElementById('flipMatchGameSoundButt
 // SOUNDS
 
 const wrongSounds = ['../assets/music/wrong/wrong-sound-one.mp3','../assets/music/wrong/wrong-sound-two.mp3',',../assets/music/wrong/wrong-sound-three.mp3','../assets/music/wrong/wrong-sound-four.mp3','../assets/music/wrong/wrong-sound-five.mp3'];
-const correctSounds = [''];
-const levelUpSounds = [''];
-const winningSounds = [''];
+const correctSounds = ['../assets/music/correct/correct-sound-one.mp3','../assets/music/correct/correct-sound-two.mp3','../assets/music/correct/correct-sound-three.mp3','../assets/music/correct/correct-sound-four.mp3'];
+const levelUpSounds = ['../assets/music/level-up/level-up-one.mp3','../assets/music/level-up/level-up-two.mp3','../assets/music/level-up/level-up-three.mp3','../assets/music/level-up/level-up-four.mp3','../assets/music/level-up/level-up-five.mp3'];
+const winningSounds = ['../assets/music/winner/winner-sound-one.mp3','../assets/music/winner/winner-sound-two.mp3','../assets/music/winner/winner-sound-three.mp3','../assets/music/winner/winner-sound-four.mp3','../assets/music/winner/winner-sound-five.mp3'];
 
 // START THE GAME
 
@@ -141,7 +141,7 @@ async function startTheGame() {
 
                         // MAKING A SOUND TO LET A USER KNOW THAT IT IS NOT A MATCH
                         /* flipMatchMusic.src = wrongSounds[Math.floor(Math.random() * 5)]; */
-                        flipMatchMusic.src = './assets/music/wrong.mp3'
+                        flipMatchMusic.src = './assets/music/wrong.mp3';
                         flipMatchMusic.play();
 
                         // IF IT IS NOT A MATCH, WE WILL EMPTY THE ARRAY AND UNFLIPP ALL THE CARDS.
