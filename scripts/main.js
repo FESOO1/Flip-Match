@@ -41,7 +41,7 @@ const flipMatchGameSoundButton = document.getElementById('flipMatchGameSoundButt
 
 // SOUNDS
 
-const wrongSounds = ['../assets/music/wrong/wrong-sound-one.mp3','../assets/music/wrong/wrong-sound-two.mp3',',../assets/music/wrong/wrong-sound-three.mp3','../assets/music/wrong/wrong-sound-four.mp3','../assets/music/wrong/wrong-sound-five.mp3'];
+const wrongSounds = ['../assets/music/wrong/wrong-sound-one.mp3','../assets/music/wrong/wrong-sound-two.mp3','../assets/music/wrong/wrong-sound-three.mp3','../assets/music/wrong/wrong-sound-four.mp3','../assets/music/wrong/wrong-sound-five.mp3'];
 const correctSounds = ['../assets/music/correct/correct-sound-one.mp3','../assets/music/correct/correct-sound-two.mp3','../assets/music/correct/correct-sound-three.mp3','../assets/music/correct/correct-sound-four.mp3'];
 const levelUpSounds = ['../assets/music/level-up/level-up-sound-one.mp3','../assets/music/level-up/level-up-sound-two.mp3','../assets/music/level-up/level-up-sound-three.mp3','../assets/music/level-up/level-up-sound-four.mp3','../assets/music/level-up/level-up-sound-five.mp3'];
 const winningSounds = ['../assets/music/winner/winner-sound-one.mp3','../assets/music/winner/winner-sound-two.mp3','../assets/music/winner/winner-sound-three.mp3','../assets/music/winner/winner-sound-four.mp3','../assets/music/winner/winner-sound-five.mp3'];
