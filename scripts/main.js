@@ -41,8 +41,8 @@ const flipMatchGameSoundButton = document.getElementById('flipMatchGameSoundButt
 
 // SOUNDS
 
+const wrongSounds = ['../assets/music/wrong/wrong-sound-one.mp3','../assets/music/wrong/wrong-sound-two.mp3',',../assets/music/wrong/wrong-sound-three.mp3','../assets/music/wrong/wrong-sound-four.mp3','../assets/music/wrong/wrong-sound-five.mp3'];
 const correctSounds = [''];
-const wrongSounds = [''];
 const levelUpSounds = [''];
 const winningSounds = [''];
 
@@ -140,7 +140,7 @@ async function startTheGame() {
                     } else {
 
                         // MAKING A SOUND TO LET A USER KNOW THAT IT IS NOT A MATCH
-                        flipMatchMusic.src = '../assets/music/wrong.mp3';
+                        flipMatchMusic.src = wrongSounds[Math.floor(Math.random() * 5)];
                         flipMatchMusic.play();
 
                         // IF IT IS NOT A MATCH, WE WILL EMPTY THE ARRAY AND UNFLIPP ALL THE CARDS.
