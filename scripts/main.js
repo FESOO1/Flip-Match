@@ -211,7 +211,7 @@ function gameModesFunction() {
 function playMusicFunction() {
     if (isOn === false) {
         flipMatchMusic.play();
-        flipMatchMusic.volume = 0.1;
+        flipMatchMusic.volume = 0.5;
         playMusicButton.textContent = 'MUSIC : ON';
 
         isOn = true;
