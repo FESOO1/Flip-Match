@@ -30,6 +30,7 @@ let cardImagesCounter = 0;
 const playMusicButton = document.getElementById('playMusicButton');
 const flipMatchMusic = document.querySelector('.flip-match-music');
 let isOn = false;
+let savedMode = 'nature-mode';
 
 // FLIP MATCH VARIABLES
 
@@ -42,7 +43,7 @@ async function startTheGame() {
 
     // FEATCHING DATA FROM JSON
     const response = await fetch('../data/data.json');
-    const imageData = await response.json();  
+    const imageData = await response.json();
 
     // MAKING THE CONTROLS DISAPPEAR
     flipMatchControlsContainer.style.display = 'none';
@@ -53,10 +54,21 @@ async function startTheGame() {
         flipMatchCardsContainer.innerHTML += `
             <button type="button" value="${natureCardValues[i]}" class="flip-match-card-itself">
                 <div class="flip-match-card-itself-image">
-                    <img class="flip-match-card-itself-image-itself" src="${imageData.natureCardImages[i]}">
+                    <img class="flip-match-card-itself-image-itself">
                 </div>
             </button>
         `;
+
+        // CHANGING THE PICTURES BASED ON THE MODE
+        const flipMatchCardItselfImagesItself = document.querySelectorAll('.flip-match-card-itself-image-itself');
+
+        if (savedMode === flipMatchModeButtonItself[0].value) {
+            flipMatchCardItselfImagesItself[i].setAttribute('src', imageData.natureCardImages[i]);
+        } else if (savedMode === flipMatchModeButtonItself[1].value) {
+            flipMatchCardItselfImagesItself[i].src = imageData.cartoonCardImages[i];
+        } else {
+            flipMatchCardItselfImagesItself[i].src = imageData.animalsCardImages[i];
+        };
 
         // HANDLING THE FLIPPING CARDS
         const flipMatchCardItself = document.querySelectorAll('.flip-match-card-itself');
@@ -189,6 +201,8 @@ for (let i = 0; i < flipMatchModeButtonItself.length; i++) {
             flipMatchModeButtonItselfs.classList.remove('flip-match-control-mode-itself-active');
         };
         flipMatchModeButtonItself[i].classList.add('flip-match-control-mode-itself-active');
+
+        savedMode = flipMatchModeButtonItself[i].value;
     });
 };
 
