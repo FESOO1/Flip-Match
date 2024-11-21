@@ -40,14 +40,14 @@ body::before {
 /* FLIP MATCH */
 
 .flip-match {
-    padding-block: 50px;
+    padding-block: 20px;
     min-height: 100vh;
     display: none;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
-    row-gap: 40px;
+    row-gap: 20px;
 }
 
 .flip-match-active {
