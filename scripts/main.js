@@ -196,8 +196,8 @@ function nextLevelFunction() {
         };
 
         // MAKING A SOUND TO LET A USER KNOW THAT IT IS A MATCH
-        flipMatchMusic.src = winningSounds[Math.floor(Math.random() * 5)];
-        /* flipMatchMusic.src = '../assets/music/correct.mp3'; */
+        /* flipMatchMusic.src = winningSounds[Math.floor(Math.random() * 5)]; */
+        flipMatchMusic.src = '../assets/music/winner.mp3';
         flipMatchMusic.play();
     };
     
