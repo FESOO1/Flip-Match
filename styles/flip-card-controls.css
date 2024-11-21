@@ -59,6 +59,10 @@
     background-color: rgb(70, 70, 70);
 }
 
+#continueGameButton:disabled {
+    display: none;
+}
+
 /* FLIP MATCH CONTROL MODES BUTTON CONTAINER */
 
 .flip-match-control-mode-button-container {

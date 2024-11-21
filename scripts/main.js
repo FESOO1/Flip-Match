@@ -1,5 +1,4 @@
 const flipMatchCardsContainer = document.querySelector('.flip-match-cards-themselves');
-const startGameButton = document.getElementById('startGameButton');
 const cardsCountArray = ['4','8','16','24','36'];
 const flipMatchCardsContainerGrid = ['2','3','4','5','6'];
 const foundMatches = ['2','4','8','12', '18'];
@@ -25,6 +24,8 @@ const flipMatchControlsContainer = document.querySelector('.flip-match-controls'
 const flipMatchModeButtonContainer = document.querySelector('.flip-match-control-mode-button-container');
 const flipMatchModeButtonItself = document.querySelectorAll('.flip-match-control-mode-itself');
 const modesButton = document.getElementById('modesButton');
+const continueGameButton = document.getElementById('continueGameButton');
+const startGameButton = document.getElementById('startGameButton');
 const cardImages = ['natureCardImages', 'cartoonCardImages', 'animalsCardImages'];
 let cardImagesCounter = 0;
 const playMusicButton = document.getElementById('playMusicButton');
@@ -226,6 +227,7 @@ function previousLevelFunction() {
 };
 
 function goBackToMenuFunction() {
+    continueGameButton.disabled = false;
     isPlaying = false;
     flipMatchCardsContainer.innerHTML = null;
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
@@ -260,6 +262,10 @@ function playMusicFunction() {
     };
 };
 
+function continueGameFunction() {
+    startTheGame();
+};
+
 // FLIP MATCH MODE BUTTON ITSELF
 
 for (let i = 0; i < flipMatchModeButtonItself.length; i++) {
@@ -274,6 +280,7 @@ for (let i = 0; i < flipMatchModeButtonItself.length; i++) {
 };
 
 // INITIALIZING BUTTONS
+continueGameButton.addEventListener('click', continueGameFunction);
 startGameButton.addEventListener('click', startTheGame);
 nextLevelButton.addEventListener('click', nextLevelFunction);
 prevLevelButton.addEventListener('click', previousLevelFunction);
