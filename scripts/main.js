@@ -135,7 +135,6 @@ async function startTheGame() {
 
                         // COUNTING HOM MANY MATCHES ARE FOUND
                         foundMatchesCounter++;
-                        console.log(foundMatchesCounter);
                         // IF FOUND MATCHES ARE EQUAL TO HOW MANY MATCHES ARE THERE
                         if (foundMatchesCounter === Number.parseInt(foundMatches[levelCounter], 10)) {
                             // STOPPING THE GAME
