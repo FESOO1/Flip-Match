@@ -89,7 +89,6 @@ async function startTheGame() {
             flipMatchCardItself[i].addEventListener('click', () => {
                 // INCREMENTING THE CARDCLIKED VARIABLE BY ONE SO THAT I CAN KEEP TRACK OF HOW MANY I HAVE CLICKED. CLASSLIST IS ALSO BEING ADDED TO FLIP THE CARD AS WELL AS PUSHING THAT CARD'S VALUE INTO AN ARRAY SO THAT I CAN COMPARE THEM WHEN I CLICK ON THE SECOND CARD.
                 cardClicked++;
-                console.log(cardClicked);
                 flipMatchCardItself[i].classList.add('flip-match-card-itself-flipped');
                 flipMatchCardItself[i].disabled = true;
                 savedValues.push(flipMatchCardItself[i].value);
@@ -101,8 +100,8 @@ async function startTheGame() {
                     if (savedValues[0] === flipMatchCardItself[i].value) {
 
                         // MAKING A SOUND TO LET A USER KNOW THAT IT IS A MATCH
-                        flipMatchMusic.src = correctSounds[Math.floor(Math.random() * 4)];
-                        /* flipMatchMusic.src = '../assets/music/correct.mp3'; */
+                        /* flipMatchMusic.src = correctSounds[Math.floor(Math.random() * 4)]; */
+                        flipMatchMusic.src = '../assets/music/correct.mp3';
                         flipMatchMusic.play();
 
                         // IF IT IS A MATCH, WE WILL EMPTY THE ARRAY AND CHANGE VALUE OF CARDCLICKED VARIABLE SO THAT I CAN KEEP USING IT.
@@ -128,8 +127,8 @@ async function startTheGame() {
 
                             setTimeout(() => {
                                 // MAKING A SOUND TO LET A USER KNOW THAT IT IS NOT A MATCH
-                                /* flipMatchMusic.src = '../assets/music/level-up.mp3'; */
-                                flipMatchMusic.src = levelUpSounds[Math.floor(Math.random() * 5)];
+                                /* flipMatchMusic.src = levelUpSounds[Math.floor(Math.random() * 5)]; */
+                                flipMatchMusic.src = '../assets/music/level-up.mp3';
                                 flipMatchMusic.play();
 
                                 // MAKING A MENU POP SO THAT A USER CAN GO TO THE NEXT LEVEL OR REPLAY THE SAME ONE OR GO BACK TO THE PREVIOUS LEVEL AND SO ON.
@@ -142,8 +141,8 @@ async function startTheGame() {
                     } else {
 
                         // MAKING A SOUND TO LET A USER KNOW THAT IT IS NOT A MATCH
-                        /* flipMatchMusic.src = './assets/music/wrong.mp3'; */
-                        flipMatchMusic.src = wrongSounds[Math.floor(Math.random() * 5)];
+                        /* flipMatchMusic.src = wrongSounds[Math.floor(Math.random() * 5)]; */
+                        flipMatchMusic.src = './assets/music/wrong.mp3';
                         flipMatchMusic.play();
 
                         // IF IT IS NOT A MATCH, WE WILL EMPTY THE ARRAY AND UNFLIPP ALL THE CARDS.
