@@ -1,0 +1,27 @@
+/* FLIP MATCH TIMER */
+
+.flip-match-timer {
+    width: 450px;
+    display: flex;
+    justify-content: center;
+}
+
+/* FLIP MATCH TIMER ITSELF */
+
+.flip-match-timer-itself {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.flip-match-timer-itself-svg {
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+.flip-match-timer-itself-text {
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
