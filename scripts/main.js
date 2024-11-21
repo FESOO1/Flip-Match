@@ -49,6 +49,8 @@ const winningSounds = ['../assets/music/winner/winner-sound-one.mp3','../assets/
 
 // START THE GAME
 
+window.addEventListener('DOMContentLoaded', startTheGame);
+
 async function startTheGame() {
     
     isPlaying = true;
