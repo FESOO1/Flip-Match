@@ -193,8 +193,9 @@ function nextLevelFunction() {
     if (levelCounter === cardsCountArray.length - 1) {
         nextLevelButton.disabled = true;
         for (const flipMatchItself of flipMatchCardsContainer.children) {
-            flipMatchItself.style.padding = '0';
-            flipMatchItself.style.border = '0';
+            /* flipMatchItself.style.padding = '0';
+            flipMatchItself.style.border = '0'; */
+            flipMatchItself.style.background = 'red'
         };
 
         // MAKING A SOUND TO LET A USER KNOW THAT IT IS A MATCH
