@@ -135,7 +135,7 @@ async function startTheGame() {
 
                         // COUNTING HOM MANY MATCHES ARE FOUND
                         foundMatchesCounter++;
-
+                        console.log(foundMatchesCounter);
                         // IF FOUND MATCHES ARE EQUAL TO HOW MANY MATCHES ARE THERE
                         if (foundMatchesCounter === Number.parseInt(foundMatches[levelCounter], 10)) {
                             // STOPPING THE GAME
@@ -253,6 +253,13 @@ function goBackToMenuFunction() {
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
     flipMatchControlsContainer.classList.add('flip-match-controls-active');
     flipMatchContainer.classList.remove('flip-match-active');
+
+    // RESETTING THE VARIABLE
+    foundMatchesCounter = 0;
+
+    // STOPING THE TIMER
+    clearInterval(flipMatchInterval);
+    flipMatchTimerLeft = 0, flipMatchTimerRight = 0;
     /* levelCounter = 0;
     prevLevelButton.disabled = true;
     flipMatchCardsContainer.style.gridTemplateColumns = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
