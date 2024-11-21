@@ -50,6 +50,7 @@ const winningSounds = ['../assets/music/winner/winner-sound-one.mp3','../assets/
 // START THE GAME
 
 async function startTheGame() {
+    
     isPlaying = true;
 
     // FEATCHING DATA FROM JSON
@@ -281,7 +282,15 @@ for (let i = 0; i < flipMatchModeButtonItself.length; i++) {
 
 // INITIALIZING BUTTONS
 continueGameButton.addEventListener('click', continueGameFunction);
-startGameButton.addEventListener('click', startTheGame);
+/* startGameButton.addEventListener('click', startTheGame); */
+startGameButton.addEventListener('click', () => {
+    levelCounter = 0;
+    prevLevelButton.disabled = true;
+    flipMatchCardsContainer.style.gridTemplateColumns = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
+    flipMatchCardsContainer.style.gridTemplateRows = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
+
+    startTheGame();
+});
 nextLevelButton.addEventListener('click', nextLevelFunction);
 prevLevelButton.addEventListener('click', previousLevelFunction);
 replayLevelButton.addEventListener('click', replayLevelFunction);
