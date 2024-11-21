@@ -50,7 +50,11 @@ const winningSounds = ['../assets/music/winner/winner-sound-one.mp3','../assets/
 // FLIP MATCH TIMER
 const flipMatchTimerItself = document.querySelector('.flip-match-timer-itself-text');
 let flipMatchTimerLeft = 0;
+let flipMatchTimerLeftText = '0';
+flipMatchTimerLeftText.padStart(2, '0');
 let flipMatchTimerRight = 0;
+let flipMatchTimerRightText = '0';
+flipMatchTimerRightText.padStart(2, '0');
 let flipMatchInterval;
 
 // START THE GAME
@@ -301,7 +305,6 @@ function flipMatchTimerFunction() {
     flipMatchInterval = setInterval(() => {
         if (flipMatchTimerRight < 59) {
             flipMatchTimerRight++;
-            flipMatchTimerRight.toString();
             flipMatchTimerItself.textContent = `${flipMatchTimerLeft}:${flipMatchTimerRight}`;
         } else {
             flipMatchTimerRight = 0;
