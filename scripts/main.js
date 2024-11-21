@@ -47,13 +47,21 @@ const correctSounds = ['../assets/music/correct/correct-sound-one.mp3','../asset
 const levelUpSounds = ['../assets/music/level-up/level-up-sound-one.mp3','../assets/music/level-up/level-up-sound-two.mp3','../assets/music/level-up/level-up-sound-three.mp3','../assets/music/level-up/level-up-sound-four.mp3','../assets/music/level-up/level-up-sound-five.mp3'];
 const winningSounds = ['../assets/music/winner/winner-sound-one.mp3','../assets/music/winner/winner-sound-two.mp3','../assets/music/winner/winner-sound-three.mp3','../assets/music/winner/winner-sound-four.mp3','../assets/music/winner/winner-sound-five.mp3'];
 
+// FLIP MATCH TIMER
+const flipMatchTimerItself = document.querySelector('.flip-match-timer-itself-text');
+let flipMatchTimerLeft = 0;
+let flipMatchTimerRight = 0;
+let flipMatchInterval;
+
 // START THE GAME
 
 window.addEventListener('DOMContentLoaded', startTheGame);
 
 async function startTheGame() {
-    
     isPlaying = true;
+    // AS SOON AS A USER CLICKS ON ONE OF THE CARDS TIMER WILL START
+    flipMatchTimerItself.textContent = flipMatchTimerLeft + ':' + flipMatchTimerRight;
+    flipMatchTimerFunction();
 
     // FEATCHING DATA FROM JSON
     const response = await fetch('../data/data.json');
@@ -128,6 +136,11 @@ async function startTheGame() {
                         if (foundMatchesCounter === Number.parseInt(foundMatches[levelCounter], 10)) {
                             // STOPPING THE GAME
                             isPlaying = false;
+
+                            // STOPING THE TIMER
+                            flipMatchTimerItself.textContent = flipMatchTimerLeft + ':' + flipMatchTimerRight;
+                            clearInterval(flipMatchInterval);
+                            flipMatchTimerLeft = 0, flipMatchTimerRight = 0;
 
                             setTimeout(() => {
                                 // MAKING A SOUND TO LET A USER KNOW THAT IT IS NOT A MATCH
@@ -280,6 +293,28 @@ for (let i = 0; i < flipMatchModeButtonItself.length; i++) {
 
         savedMode = flipMatchModeButtonItself[i].value;
     });
+};
+
+// FLIP MATCH TIMER
+
+function flipMatchTimerFunction() {
+    flipMatchInterval = setInterval(() => {
+        if (flipMatchTimerRight < 59) {
+            flipMatchTimerRight++;
+            flipMatchTimerRight.toString();
+            flipMatchTimerItself.textContent = `${flipMatchTimerLeft}:${flipMatchTimerRight}`;
+        } else {
+            flipMatchTimerRight = 0;
+            flipMatchTimerItself.textContent = `${flipMatchTimerLeft}:${flipMatchTimerRight}`;
+            
+            if (flipMatchTimerLeft < 15) {
+                flipMatchTimerLeft++;
+                flipMatchTimerItself.textContent = `${flipMatchTimerLeft}:${flipMatchTimerRight}`;
+            } else {
+                clearInterval(flipMatchInterval);
+            };
+        };
+    }, 1000);
 };
 
 // INITIALIZING BUTTONS
