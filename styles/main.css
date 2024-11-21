@@ -146,6 +146,15 @@ body::before {
         width: 400px;
         height: 400px;
     }
+    .flip-match-card-itself,
+    .flip-match-card-itself-found {
+        padding: 0;
+        border: 0;
+    }
+    .flip-match-card-itself-image {
+        border: 0;
+        border-radius: 0.3rem;
+    }
 }
 
 @media (max-width: 500px) {

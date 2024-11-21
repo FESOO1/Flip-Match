@@ -25,3 +25,29 @@
     font-weight: 600;
     font-size: 1.5rem;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 800px) {
+    .flip-match-timer {
+        width: 400px;
+    }
+}
+
+@media (max-width: 500px) {
+    .flip-match-timer {
+        width: 350px;
+    }
+}
+
+@media (max-width: 400px) {
+    .flip-match-timer {
+        width: 300px;
+    }
+}
+
+@media (max-width: 350px) {
+    .flip-match-timer {
+        width: 280px;
+    }
+}
