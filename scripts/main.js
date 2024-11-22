@@ -255,6 +255,8 @@ function goBackToMenuFunction() {
 
     // RESETTING THE VARIABLE
     foundMatchesCounter = 0;
+    cardClicked = 0;
+    savedValues = [];
 
     // STOPING THE TIMER
     clearInterval(flipMatchInterval);
