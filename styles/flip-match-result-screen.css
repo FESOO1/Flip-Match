@@ -37,16 +37,26 @@
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-/* .flip-match-result-screen-scoreboard-itself:nth-of-type(2) {
-}  */  
-
 .flip-match-result-screen-scoreboard-itself-svg {
     color: white;
     width: 35px;
     height: 35px;
 }
 
-.flip-match-result-screen-scoreboard-itself-svg-active {
+/* .flip-match-result-screen-scoreboard-itself-svg-active {
+    fill: white;
+}
+ */
+.flip-match-result-screen-scoreboard-one-star-performance .flip-match-result-screen-scoreboard-itself-svg-first {
+    fill: white;
+}
+
+.flip-match-result-screen-scoreboard-two-star-performance .flip-match-result-screen-scoreboard-itself-svg-first,
+.flip-match-result-screen-scoreboard-two-star-performance .flip-match-result-screen-scoreboard-itself-svg-second {
+    fill: white;
+}
+
+.flip-match-result-screen-scoreboard-three-star-performance .flip-match-result-screen-scoreboard-itself-svg {
     fill: white;
 }
 

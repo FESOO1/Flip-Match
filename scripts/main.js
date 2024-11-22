@@ -50,12 +50,12 @@ const winningSounds = ['../assets/music/winner/winner-sound-one.mp3','../assets/
 // FLIP MATCH TIMER
 const flipMatchTimerItself = document.querySelector('.flip-match-timer-itself-text');
 let flipMatchTimerLeft = 0;
-let flipMatchTimerLeftText = '0';
-flipMatchTimerLeftText.padStart(2, '0');
 let flipMatchTimerRight = 0;
-let flipMatchTimerRightText = '0';
-flipMatchTimerRightText.padStart(2, '0');
 let flipMatchInterval;
+
+// FLIP MATCH TIMER STARS
+
+const flipMatchResultScreenScoreboard = document.querySelector('.flip-match-result-screen-scoreboard');
 
 // START THE GAME
 
@@ -139,6 +139,15 @@ async function startTheGame() {
                         if (foundMatchesCounter === Number.parseInt(foundMatches[levelCounter], 10)) {
                             // STOPPING THE GAME
                             isPlaying = false;
+
+                            // SHOWING STARTS BASED ON HOW FAST THE USER COMPLETED THE LEVEL
+                            if (flipMatchTimerLeft === 0) {
+                                flipMatchResultScreenScoreboard.classList.add('flip-match-result-screen-scoreboard-three-star-performance');
+                            } else if (flipMatchTimerLeft < 2) {
+                                flipMatchResultScreenScoreboard.classList.add('flip-match-result-screen-scoreboard-two-star-performance');
+                            } else {
+                                flipMatchResultScreenScoreboard.classList.add('flip-match-result-screen-scoreboard-one-star-performance');
+                            };
 
                             // STOPING THE TIMER
                             flipMatchTimerItself.textContent = flipMatchTimerLeft + ':' + flipMatchTimerRight;
@@ -325,7 +334,7 @@ function flipMatchTimerFunction() {
                 clearInterval(flipMatchInterval);
             };
         };
-    }, 1000);
+    }, 100);
 };
 
 // INITIALIZING BUTTONS
