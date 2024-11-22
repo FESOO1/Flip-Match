@@ -156,7 +156,6 @@ async function startTheGame() {
 
                             setTimeout(() => {
                                 // MAKING A SOUND TO LET A USER KNOW THAT IT IS NOT A MATCH
-                                /* flipMatchMusic.src = levelUpSounds[Math.floor(Math.random() * 5)]; */
                                 flipMatchMusic.src = '../assets/music/level-up.mp3';
                                 flipMatchMusic.play();
 
