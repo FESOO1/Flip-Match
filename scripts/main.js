@@ -168,10 +168,6 @@ async function startTheGame() {
 
                             // STOPING THE TIMER
                             clearInterval(flipMatchInterval);
-                            /* flipMatchTimerLeftText.textContent = '00';
-                            flipMatchTimerRightText.textContent = '00';
-                            flipMatchTimerLeft = 0, flipMatchTimerRight = 0;
-                            scoreCounter = 0; */
 
                             setTimeout(() => {
                                 // MAKING A SOUND TO LET A USER KNOW THAT IT IS NOT A MATCH
@@ -180,6 +176,11 @@ async function startTheGame() {
 
                                 // MAKING A MENU POP SO THAT A USER CAN GO TO THE NEXT LEVEL OR REPLAY THE SAME ONE OR GO BACK TO THE PREVIOUS LEVEL AND SO ON.
                                 flipMatchResultScreenContainer.classList.add('flip-match-result-screen-active');
+                                /* if (flipMatchResultScreenContainer.classList.contains('flip-match-result-screen-active')) {
+                                    flipMatchContainer.classList.add('flip-match-inactive');
+                                } else {
+                                    flipMatchContainer.classList.remove('flip-match-inactive');
+                                }; */
 
                                 // RESETTING THE VARIABLE
                                 foundMatchesCounter = 0;

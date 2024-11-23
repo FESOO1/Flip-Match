@@ -54,6 +54,10 @@ body::before {
     display: flex;
 }
 
+.flip-match-inactive {
+    pointer-events: none;
+}
+
 /* FLIP MATCH CARDS THEMSELVES */
 
 .flip-match-cards-themselves {
