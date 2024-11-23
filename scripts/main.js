@@ -50,6 +50,7 @@ const winningSounds = ['../assets/music/winner/winner-sound-one.mp3','../assets/
 // FLIP MATCH TIMER
 const flipMatchTimerButton = document.querySelector('.flip-match-timer-itself-button');
 const flipMatchTimerInfo = document.querySelector('.flip-match-timer-info');
+const flipMatchTimerLevelText = document.querySelector('.flip-match-timer-info-level-text');
 const flipMatchTimerItself = document.querySelector('.flip-match-timer-itself-text');
 const flipMatchTimerLeftText = document.getElementById('flipMatchTimerLeftText');
 const flipMatchTimerRightText = document.getElementById('flipMatchTimerRightText');
@@ -57,6 +58,7 @@ let scoreCounter = 0;
 let flipMatchTimerLeft = 0;
 let flipMatchTimerRight = 0;
 let flipMatchInterval;
+let flipMatchTimerLevelTextCounter = 1;
 
 const threeStarsPerformanceText = document.getElementById('threeStarsPerformanceText');
 const twoStarsPerformanceText = document.getElementById('twoStarsPerformanceText');
@@ -253,8 +255,10 @@ function nextLevelFunction() {
 
     // PERFORMANCE COUNTER
     levelTimerPerformanceCounter++;
+    flipMatchTimerLevelTextCounter++;
     threeStarsPerformanceText.textContent = levelTimerPerformanceThree[levelTimerPerformanceCounter];
     twoStarsPerformanceText.textContent = levelTimerPerformanceTwo[levelTimerPerformanceCounter];
+    flipMatchTimerLevelText.textContent = `Level ${flipMatchTimerLevelTextCounter}:`;
 };
 
 function previousLevelFunction() {
@@ -276,8 +280,10 @@ function previousLevelFunction() {
 
     // PERFORMANCE COUNTER
     levelTimerPerformanceCounter--;
+    flipMatchTimerLevelTextCounter--;
     threeStarsPerformanceText.textContent = levelTimerPerformanceThree[levelTimerPerformanceCounter];
     twoStarsPerformanceText.textContent = levelTimerPerformanceTwo[levelTimerPerformanceCounter];
+    flipMatchTimerLevelText.textContent = `Level ${flipMatchTimerLevelTextCounter}:`;
 };
 
 function goBackToMenuFunction() {
@@ -296,10 +302,6 @@ function goBackToMenuFunction() {
     // STOPING THE TIMER
     clearInterval(flipMatchInterval);
     flipMatchTimerLeft = 0, flipMatchTimerRight = 0;
-    /* levelCounter = 0;
-    prevLevelButton.disabled = true;
-    flipMatchCardsContainer.style.gridTemplateColumns = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`;
-    flipMatchCardsContainer.style.gridTemplateRows = `repeat(${flipMatchCardsContainerGrid[levelCounter]}, 1fr)`; */
 };
 
 // CONTROLS FUNCTIONS
@@ -378,7 +380,6 @@ window.addEventListener('click', () => {
 
 // INITIALIZING BUTTONS
 continueGameButton.addEventListener('click', continueGameFunction);
-/* startGameButton.addEventListener('click', startTheGame); */
 startGameButton.addEventListener('click', () => {
     levelCounter = 0;
     prevLevelButton.disabled = true;
