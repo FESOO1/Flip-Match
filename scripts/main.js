@@ -27,7 +27,7 @@ const flipMatchModeButtonItself = document.querySelectorAll('.flip-match-control
 const modesButton = document.getElementById('modesButton');
 const continueGameButton = document.getElementById('continueGameButton');
 const startGameButton = document.getElementById('startGameButton');
-const cardImages = ['natureCardImages', 'cartoonCardImages', 'animalsCardImages'];
+const cardImages = ['natureCardImages', 'cartoonCardImages', 'animalsCardImages', 'fruitsCardImages'];
 let cardImagesCounter = 0;
 const playMusicButton = document.getElementById('playMusicButton');
 const flipMatchMusic = document.querySelector('.flip-match-music');
@@ -109,6 +109,8 @@ async function startTheGame() {
             flipMatchCardItselfImagesItself[i].src = imageData.natureCardImages[i];
         } else if (savedMode === flipMatchModeButtonItself[1].value) {
             flipMatchCardItselfImagesItself[i].src = imageData.cartoonCardImages[i];
+        } else if (savedMode === flipMatchModeButtonItself[2].value) {
+            flipMatchCardItselfImagesItself[i].src = imageData.fruitsCardImages[i];
         } else {
             flipMatchCardItselfImagesItself[i].src = imageData.animalsCardImages[i];
         };
