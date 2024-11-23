@@ -73,8 +73,6 @@ const flipMatchResultScreenScoreboard = document.querySelector('.flip-match-resu
 
 // START THE GAME
 
-/* window.addEventListener('DOMContentLoaded', startTheGame); */
-
 async function startTheGame() {
     isPlaying = true;
     // AS SOON AS A USER CLICKS ON ONE OF THE CARDS TIMER WILL START
