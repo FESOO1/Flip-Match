@@ -149,10 +149,6 @@ body::before {
 
 /* MEDIA QUERIES */
 
-@media (min-width: 1800px) {
-    
-}
-
 @media (min-width: 1550px) {
     .flip-match-cards-themselves {
         width: 650px;
