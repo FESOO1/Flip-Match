@@ -152,6 +152,8 @@ async function startTheGame() {
                         foundMatchesCounter++;
                         // IF FOUND MATCHES ARE EQUAL TO HOW MANY MATCHES ARE THERE
                         if (foundMatchesCounter === Number.parseInt(foundMatches[levelCounter], 10)) {
+                            nextLevelButton.disabled = true;
+
                             // STOPPING THE GAME
                             isPlaying = false;
 
