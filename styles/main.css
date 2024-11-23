@@ -11,6 +11,10 @@
     --f-main-header: "Bokor", system-ui;
 }
 
+html {
+    user-select: none;
+}
+
 * {
     padding: 0;
     margin: 0;
