@@ -2,8 +2,7 @@
 
 .flip-match-result-screen {
     position: absolute;
-    /* top: -50%; */
-    top: 50%;
+    top: -50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
@@ -59,30 +58,6 @@
 
 .flip-match-result-screen-scoreboard-three-star-performance .flip-match-result-screen-scoreboard-itself-svg {
     fill: white;
-}
-
-/* FLIP MATCH RESULT SCREEN SCOREBOARD INFO */
-
-.flip-match-result-screen-scoreboard-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 5px;
-    border-radius: 0.5rem;
-    border: 0;
-    background-color: rgb(23, 23, 23);
-    padding: 10px;
-}
-
-.flip-match-result-screen-scoreboard-info-header {
-    font-weight: 400;
-    text-align: center;
-    color: white;
-}
-
-.flip-match-result-screen-scoreboard-info-text {
-    color: white;
-    font-weight: 200;
 }
 
 /* FLIP MATCH RESULT SCREEN HEADER */

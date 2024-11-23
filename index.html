@@ -61,13 +61,6 @@
                         </svg>
                     </div>
                 </div>
-                <!-- FLIP MATCH RESULT SCREEN SCOREBOARD INFO -->
-                <fieldset class="flip-match-result-screen-scoreboard-info">
-                    <legend class="flip-match-result-screen-scoreboard-info-header">Finish fast to earn stars!</legend>
-                    <h4 class="flip-match-result-screen-scoreboard-info-text">3 Stars: Under 10 seconds</h4>
-                    <h4 class="flip-match-result-screen-scoreboard-info-text">2 Stars: Under 15 seconds</h4>
-                    <h4 class="flip-match-result-screen-scoreboard-info-text">1 Star: Just finish!"</h4>
-                </fieldset>
                 <!-- FLIP MATCH RESULT SCREEN HEADER -->
                 <div class="flip-match-result-screen-header-container">
                     <h3 class="flip-match-result-screen-header">Congratulations! You've Won!</h3>
@@ -118,7 +111,26 @@
             <div class="flip-match-timer">
                 <div class="flip-match-timer-itself">
                     <h3 class="flip-match-timer-itself-text"><span id="flipMatchTimerLeftText">00</span>:<span id="flipMatchTimerRightText"></span></h3>
+                    <button class="flip-match-timer-itself-button" title="Timer info">
+                        <svg class="flip-match-timer-itself-button-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M10 9C10 7.89543 10.8954 7 12 7C13.1046 7 14 7.89543 14 9C14 9.39815 13.8837 9.76913 13.6831 10.0808C13.0854 11.0097 12 11.8954 12 13V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M11.992 17H12.001" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
                 </div>
+            </div>
+
+            <!-- FLIP MATCH TIMER - INFO -->
+            <div class="flip-match-timer-info">
+                <!-- FLIP MATCH RESULT SCREEN SCOREBOARD INFO -->
+                <fieldset class="flip-match-timer-info-inner">
+                    <legend class="flip-match-timer-info-header">Finish fast to earn stars!</legend>
+                    <h3 class="flip-match-timer-info-level-text">Level 3:</h3>
+                    <h4 class="flip-match-timer-info-text">3 Stars: Under <span id="threeStarsPerformanceText">10</span> seconds</h4>
+                    <h4 class="flip-match-timer-info-text">2 Stars: Under <span id="twoStarsPerformanceText">15</span> seconds</h4>
+                    <h4 class="flip-match-timer-info-text">1 Star: Just finish!"</h4>
+                </fieldset>
             </div>
         </div>
     </div>

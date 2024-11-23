@@ -48,6 +48,8 @@ const levelUpSounds = ['../assets/music/level-up/level-up-sound-one.mp3','../ass
 const winningSounds = ['../assets/music/winner/winner-sound-one.mp3','../assets/music/winner/winner-sound-two.mp3','../assets/music/winner/winner-sound-three.mp3','../assets/music/winner/winner-sound-four.mp3','../assets/music/winner/winner-sound-five.mp3'];
 
 // FLIP MATCH TIMER
+const flipMatchTimerButton = document.querySelector('.flip-match-timer-itself-button');
+const flipMatchTimerInfo = document.querySelector('.flip-match-timer-info');
 const flipMatchTimerItself = document.querySelector('.flip-match-timer-itself-text');
 const flipMatchTimerLeftText = document.getElementById('flipMatchTimerLeftText');
 const flipMatchTimerRightText = document.getElementById('flipMatchTimerRightText');
@@ -55,6 +57,9 @@ let scoreCounter = 0;
 let flipMatchTimerLeft = 0;
 let flipMatchTimerRight = 0;
 let flipMatchInterval;
+
+const threeStarsPerformanceText = document.getElementById('threeStarsPerformanceText');
+const twoStarsPerformanceText = document.getElementById('twoStarsPerformanceText');
 const levelTimerPerformanceThree = ['10','15','30','90','120'];
 const levelTimerPerformanceTwo = ['15','20','45','120','200'];
 let levelTimerPerformanceCounter = 0;
@@ -247,7 +252,9 @@ function nextLevelFunction() {
     flipMatchResultHeader.textContent = flipMatchResultHeaderArray[levelCounter];
 
     // PERFORMANCE COUNTER
-    levelTimerPerformanceCounter--;
+    levelTimerPerformanceCounter++;
+    threeStarsPerformanceText.textContent = levelTimerPerformanceThree[levelTimerPerformanceCounter];
+    twoStarsPerformanceText.textContent = levelTimerPerformanceTwo[levelTimerPerformanceCounter];
 };
 
 function previousLevelFunction() {
@@ -269,6 +276,8 @@ function previousLevelFunction() {
 
     // PERFORMANCE COUNTER
     levelTimerPerformanceCounter--;
+    threeStarsPerformanceText.textContent = levelTimerPerformanceThree[levelTimerPerformanceCounter];
+    twoStarsPerformanceText.textContent = levelTimerPerformanceTwo[levelTimerPerformanceCounter];
 };
 
 function goBackToMenuFunction() {
@@ -355,6 +364,18 @@ function flipMatchTimerFunction() {
     }, 1000);
 };
 
+// FLIP MATCH TIMER BUTTON FUNCTION
+
+function flipMatchTimerInfoFunction(e) {
+    e.stopImmediatePropagation();
+
+    flipMatchTimerInfo.classList.add('flip-match-timer-info-active');
+};
+
+window.addEventListener('click', () => {
+    flipMatchTimerInfo.classList.remove('flip-match-timer-info-active');
+});
+
 // INITIALIZING BUTTONS
 continueGameButton.addEventListener('click', continueGameFunction);
 /* startGameButton.addEventListener('click', startTheGame); */
@@ -374,3 +395,4 @@ playMusicButton.addEventListener('click', playMusicFunction);
 flipMatchGameSoundButton.addEventListener('click', playMusicFunction);
 backToMenuButton.addEventListener('click', goBackToMenuFunction);
 flipMatchGameMenuButton.addEventListener('click', goBackToMenuFunction);
+flipMatchTimerButton.addEventListener('click', flipMatchTimerInfoFunction);
