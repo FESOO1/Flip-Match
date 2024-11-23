@@ -325,12 +325,14 @@ function playMusicFunction() {
     if (isOn === false) {
         flipMatchMusic.volume = 0;
         playMusicButton.textContent = 'SOUND : OFF';
+        playMusicButton.classList.add('flip-match-control-button-itself-music-active');
         flipMatchGameSoundButton.classList.add('flip-match-game-sound-button-on');
 
         isOn = true;
     } else {
         flipMatchMusic.volume = 0.5;
         playMusicButton.textContent = 'SOUND : ON';
+        playMusicButton.classList.remove('flip-match-control-button-itself-music-active');
         flipMatchGameSoundButton.classList.remove('flip-match-game-sound-button-on');
 
         isOn = false;

@@ -53,6 +53,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .flip-match-control-button-itself:hover {
@@ -61,6 +62,32 @@
 
 #continueGameButton:disabled {
     display: none;
+}
+
+/* FLIP MATCH CONTROL MUSIC BUTTON */
+
+.flip-match-control-button-itself-music::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 1rem;
+    background-color: rgb(21, 255, 0);
+}
+
+.flip-match-control-button-itself-music-active::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 1rem;
+    background-color: red;
 }
 
 /* FLIP MATCH CONTROL MODES BUTTON CONTAINER */
