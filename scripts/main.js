@@ -10,6 +10,7 @@ let savedValues = [];
 let isPlaying = false;
 
 // RESULT MENU VARIABLES
+const flipMatchResultScreenMainContainer = document.querySelector('.flip-match-result-screen-main');
 const prevLevelButton = document.getElementById('prevLevelButton');
 const nextLevelButton = document.getElementById('nextLevelButton');
 const replayLevelButton = document.getElementById('replayLevelButton');
@@ -175,6 +176,7 @@ async function startTheGame() {
                                 flipMatchMusic.play();
 
                                 // MAKING A MENU POP SO THAT A USER CAN GO TO THE NEXT LEVEL OR REPLAY THE SAME ONE OR GO BACK TO THE PREVIOUS LEVEL AND SO ON.
+                                flipMatchResultScreenMainContainer.classList.add('flip-match-result-screen-main-active');
                                 flipMatchResultScreenContainer.classList.add('flip-match-result-screen-active');
 
                                 // RESETTING THE VARIABLE
@@ -221,6 +223,7 @@ function replayLevelFunction() {
 
     // RESULT MENU
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
+    flipMatchResultScreenMainContainer.classList.remove('flip-match-result-screen-main-active');
 };
 
 function nextLevelFunction() {
@@ -242,6 +245,7 @@ function nextLevelFunction() {
     // RESULT MENU
     prevLevelButton.disabled = false;
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
+    flipMatchResultScreenMainContainer.classList.remove('flip-match-result-screen-main-active');
     flipMatchResultHeader.textContent = flipMatchResultHeaderArray[levelCounter];
 
     // TIMER RESETTING
@@ -273,6 +277,7 @@ function previousLevelFunction() {
     // RESULT MENU
     nextLevelButton.disabled = false;
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
+    flipMatchResultScreenMainContainer.classList.remove('flip-match-result-screen-main-active');
     flipMatchResultHeader.textContent = flipMatchResultHeaderArray[levelCounter];      
 
     // TIMER RESETTING
@@ -294,6 +299,7 @@ function goBackToMenuFunction() {
     isPlaying = false;
     flipMatchCardsContainer.innerHTML = null;
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
+    flipMatchResultScreenMainContainer.classList.remove('flip-match-result-screen-main-active');
     flipMatchControlsContainer.classList.add('flip-match-controls-active');
     flipMatchContainer.classList.remove('flip-match-active');
 
