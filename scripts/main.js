@@ -51,6 +51,7 @@ const winningSounds = ['../assets/music/winner/winner-sound-one.mp3','../assets/
 const flipMatchTimerItself = document.querySelector('.flip-match-timer-itself-text');
 const flipMatchTimerLeftText = document.getElementById('flipMatchTimerLeftText');
 const flipMatchTimerRightText = document.getElementById('flipMatchTimerRightText');
+let scoreCounter = 0;
 let flipMatchTimerLeft = 0;
 let flipMatchTimerRight = 0;
 let flipMatchInterval;
@@ -144,18 +145,23 @@ async function startTheGame() {
                             isPlaying = false;
 
                             // SHOWING STARTS BASED ON HOW FAST THE USER COMPLETED THE LEVEL
-                            /* if (flipMatchTimerLeft < 1) {
+                            if (scoreCounter < 60) {
                                 flipMatchResultScreenScoreboard.classList.add('flip-match-result-screen-scoreboard-three-star-performance');
-                            } else if (flipMatchTimerLeft > 0) {
+                            } else if (scoreCounter < 120) {
+                                flipMatchResultScreenScoreboard.classList.remove('flip-match-result-screen-scoreboard-three-star-performance');
                                 flipMatchResultScreenScoreboard.classList.add('flip-match-result-screen-scoreboard-two-star-performance');
                             } else {
+                                flipMatchResultScreenScoreboard.classList.remove('flip-match-result-screen-scoreboard-three-star-performance');
+                                flipMatchResultScreenScoreboard.classList.remove('flip-match-result-screen-scoreboard-two-star-performance');
                                 flipMatchResultScreenScoreboard.classList.add('flip-match-result-screen-scoreboard-one-star-performance');
-                            }; */
+                            };
 
                             // STOPING THE TIMER
-                            flipMatchTimerItself.textContent = flipMatchTimerLeft + ':' + flipMatchTimerRight;
+                            flipMatchTimerLeftText.textContent = '00';
+                            flipMatchTimerRightText.textContent = '00';
                             clearInterval(flipMatchInterval);
                             flipMatchTimerLeft = 0, flipMatchTimerRight = 0;
+                            scoreCounter = 0;
 
                             setTimeout(() => {
                                 // MAKING A SOUND TO LET A USER KNOW THAT IT IS NOT A MATCH
@@ -322,6 +328,7 @@ for (let i = 0; i < flipMatchModeButtonItself.length; i++) {
 
 function flipMatchTimerFunction() {
     flipMatchInterval = setInterval(() => {
+        scoreCounter++;
         if (flipMatchTimerRight < 59) {
             flipMatchTimerRight++;
             flipMatchTimerRightText.textContent = `${flipMatchTimerRight}`.padStart(2, '0');
@@ -336,7 +343,8 @@ function flipMatchTimerFunction() {
                 clearInterval(flipMatchInterval);
             };
         };
-    }, 1000);
+        console.log(scoreCounter);
+    }, 100);
 };
 
 // INITIALIZING BUTTONS
