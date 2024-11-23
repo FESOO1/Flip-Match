@@ -167,11 +167,11 @@ async function startTheGame() {
                             };
 
                             // STOPING THE TIMER
-                            flipMatchTimerLeftText.textContent = '00';
-                            flipMatchTimerRightText.textContent = '00';
                             clearInterval(flipMatchInterval);
+                            /* flipMatchTimerLeftText.textContent = '00';
+                            flipMatchTimerRightText.textContent = '00';
                             flipMatchTimerLeft = 0, flipMatchTimerRight = 0;
-                            scoreCounter = 0;
+                            scoreCounter = 0; */
 
                             setTimeout(() => {
                                 // MAKING A SOUND TO LET A USER KNOW THAT IT IS NOT A MATCH
@@ -237,13 +237,8 @@ function nextLevelFunction() {
     // DISABLING THE NEXT BUTTON WHEN LEVEL IS EQUAL TO THE LAST LEVEL OF THE GAME
     if (levelCounter === cardsCountArray.length - 1) {
         nextLevelButton.disabled = true;
-        /* for (const flipMatchItself of flipMatchCardsContainer.children) {
-            flipMatchItself.style.padding = '0';
-            flipMatchItself.style.border = '0';
-        }; */
 
         // MAKING A SOUND TO LET A USER KNOW THAT IT IS A MATCH
-        /* flipMatchMusic.src = winningSounds[Math.floor(Math.random() * 5)]; */
         flipMatchMusic.src = '../assets/music/winner.mp3';
         flipMatchMusic.play();
     };
@@ -252,6 +247,12 @@ function nextLevelFunction() {
     prevLevelButton.disabled = false;
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
     flipMatchResultHeader.textContent = flipMatchResultHeaderArray[levelCounter];
+
+    // TIMER RESETTING
+    flipMatchTimerLeftText.textContent = '00';
+    flipMatchTimerRightText.textContent = '00';
+    flipMatchTimerLeft = 0, flipMatchTimerRight = 0;
+    scoreCounter = 0;
 
     // PERFORMANCE COUNTER
     levelTimerPerformanceCounter++;
@@ -277,6 +278,12 @@ function previousLevelFunction() {
     nextLevelButton.disabled = false;
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
     flipMatchResultHeader.textContent = flipMatchResultHeaderArray[levelCounter];      
+
+    // TIMER RESETTING
+    flipMatchTimerLeftText.textContent = '00';
+    flipMatchTimerRightText.textContent = '00';
+    flipMatchTimerLeft = 0, flipMatchTimerRight = 0;
+    scoreCounter = 0;
 
     // PERFORMANCE COUNTER
     levelTimerPerformanceCounter--;
