@@ -176,11 +176,6 @@ async function startTheGame() {
 
                                 // MAKING A MENU POP SO THAT A USER CAN GO TO THE NEXT LEVEL OR REPLAY THE SAME ONE OR GO BACK TO THE PREVIOUS LEVEL AND SO ON.
                                 flipMatchResultScreenContainer.classList.add('flip-match-result-screen-active');
-                                /* if (flipMatchResultScreenContainer.classList.contains('flip-match-result-screen-active')) {
-                                    flipMatchContainer.classList.add('flip-match-inactive');
-                                } else {
-                                    flipMatchContainer.classList.remove('flip-match-inactive');
-                                }; */
 
                                 // RESETTING THE VARIABLE
                                 foundMatchesCounter = 0;
