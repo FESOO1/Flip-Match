@@ -49,6 +49,8 @@ const winningSounds = ['../assets/music/winner/winner-sound-one.mp3','../assets/
 
 // FLIP MATCH TIMER
 const flipMatchTimerItself = document.querySelector('.flip-match-timer-itself-text');
+const flipMatchTimerLeftText = document.getElementById('flipMatchTimerLeftText');
+const flipMatchTimerRightText = document.getElementById('flipMatchTimerRightText');
 let flipMatchTimerLeft = 0;
 let flipMatchTimerRight = 0;
 let flipMatchInterval;
@@ -64,7 +66,8 @@ window.addEventListener('DOMContentLoaded', startTheGame);
 async function startTheGame() {
     isPlaying = true;
     // AS SOON AS A USER CLICKS ON ONE OF THE CARDS TIMER WILL START
-    flipMatchTimerItself.textContent = flipMatchTimerLeft + ':' + flipMatchTimerRight;
+    flipMatchTimerLeftText.textContent = '00';
+    flipMatchTimerRightText.textContent = '00';
     flipMatchTimerFunction();
 
     // FEATCHING DATA FROM JSON
@@ -141,13 +144,13 @@ async function startTheGame() {
                             isPlaying = false;
 
                             // SHOWING STARTS BASED ON HOW FAST THE USER COMPLETED THE LEVEL
-                            if (flipMatchTimerLeft === 0) {
+                            /* if (flipMatchTimerLeft < 1) {
                                 flipMatchResultScreenScoreboard.classList.add('flip-match-result-screen-scoreboard-three-star-performance');
-                            } else if (flipMatchTimerLeft < 2) {
+                            } else if (flipMatchTimerLeft > 0) {
                                 flipMatchResultScreenScoreboard.classList.add('flip-match-result-screen-scoreboard-two-star-performance');
                             } else {
                                 flipMatchResultScreenScoreboard.classList.add('flip-match-result-screen-scoreboard-one-star-performance');
-                            };
+                            }; */
 
                             // STOPING THE TIMER
                             flipMatchTimerItself.textContent = flipMatchTimerLeft + ':' + flipMatchTimerRight;
@@ -321,19 +324,19 @@ function flipMatchTimerFunction() {
     flipMatchInterval = setInterval(() => {
         if (flipMatchTimerRight < 59) {
             flipMatchTimerRight++;
-            flipMatchTimerItself.textContent = `${flipMatchTimerLeft}:${flipMatchTimerRight}`;
+            flipMatchTimerRightText.textContent = `${flipMatchTimerRight}`.padStart(2, '0');
         } else {
             flipMatchTimerRight = 0;
-            flipMatchTimerItself.textContent = `${flipMatchTimerLeft}:${flipMatchTimerRight}`;
+            flipMatchTimerRightText.textContent = `${flipMatchTimerRight}`.padStart(2, '0');
             
             if (flipMatchTimerLeft < 15) {
                 flipMatchTimerLeft++;
-                flipMatchTimerItself.textContent = `${flipMatchTimerLeft}:${flipMatchTimerRight}`;
+                flipMatchTimerLeftText.textContent = `${flipMatchTimerLeft}`.padStart(2, '0');
             } else {
                 clearInterval(flipMatchInterval);
             };
         };
-    }, 100);
+    }, 1000);
 };
 
 // INITIALIZING BUTTONS
