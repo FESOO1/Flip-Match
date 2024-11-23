@@ -67,6 +67,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    row-gap: 5px;
+    border-radius: 0.5rem;
+    border: 0;
+    background-color: rgb(23, 23, 23);
+    padding: 10px;
+}
+
+.flip-match-result-screen-scoreboard-info-header {
+    font-weight: 400;
+    text-align: center;
+    color: white;
+}
+
+.flip-match-result-screen-scoreboard-info-text {
+    color: white;
+    font-weight: 200;
 }
 
 /* FLIP MATCH RESULT SCREEN HEADER */
