@@ -75,6 +75,9 @@ const flipMatchResultScreenScoreboard = document.querySelector('.flip-match-resu
 
 async function startTheGame() {
     isPlaying = true;
+
+    // ENABLING THE NEXT BUTTON
+    nextLevelButton.disabled = false;
     // AS SOON AS A USER CLICKS ON ONE OF THE CARDS TIMER WILL START
     flipMatchTimerLeftText.textContent = '00';
     flipMatchTimerRightText.textContent = '00';
@@ -152,7 +155,6 @@ async function startTheGame() {
                         foundMatchesCounter++;
                         // IF FOUND MATCHES ARE EQUAL TO HOW MANY MATCHES ARE THERE
                         if (foundMatchesCounter === Number.parseInt(foundMatches[levelCounter], 10)) {
-                            nextLevelButton.disabled = false;
 
                             // STOPPING THE GAME
                             isPlaying = false;
