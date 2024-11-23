@@ -77,7 +77,9 @@ async function startTheGame() {
     isPlaying = true;
 
     // ENABLING THE NEXT BUTTON
-    nextLevelButton.disabled = false;
+    if (levelCounter === 0) {
+        nextLevelButton.disabled = false;
+    };
     // AS SOON AS A USER CLICKS ON ONE OF THE CARDS TIMER WILL START
     flipMatchTimerLeftText.textContent = '00';
     flipMatchTimerRightText.textContent = '00';
