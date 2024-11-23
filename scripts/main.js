@@ -230,6 +230,10 @@ function replayLevelFunction() {
     // RESULT MENU
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
     flipMatchResultScreenMainContainer.classList.remove('flip-match-result-screen-main-active');
+
+    // TIMER RESETTING
+    flipMatchTimerLeft = 0, flipMatchTimerRight = 0;
+    scoreCounter = 0;
 };
 
 function nextLevelFunction() {
