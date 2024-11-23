@@ -72,7 +72,7 @@ const flipMatchResultScreenScoreboard = document.querySelector('.flip-match-resu
 
 // START THE GAME
 
-window.addEventListener('DOMContentLoaded', startTheGame);
+/* window.addEventListener('DOMContentLoaded', startTheGame); */
 
 async function startTheGame() {
     isPlaying = true;
@@ -302,9 +302,10 @@ function goBackToMenuFunction() {
     cardClicked = 0;
     savedValues = [];
 
-    // STOPING THE TIMER
+    // TIMER RESETTING
     clearInterval(flipMatchInterval);
     flipMatchTimerLeft = 0, flipMatchTimerRight = 0;
+    scoreCounter = 0;
 };
 
 // CONTROLS FUNCTIONS
