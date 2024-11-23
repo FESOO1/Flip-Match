@@ -55,6 +55,9 @@ let scoreCounter = 0;
 let flipMatchTimerLeft = 0;
 let flipMatchTimerRight = 0;
 let flipMatchInterval;
+const levelTimerPerformanceThree = ['10','15','30','90','120'];
+const levelTimerPerformanceTwo = ['15','20','45','120','200'];
+let levelTimerPerformanceCounter = 0;
 
 // FLIP MATCH TIMER STARS
 
@@ -145,9 +148,9 @@ async function startTheGame() {
                             isPlaying = false;
 
                             // SHOWING STARTS BASED ON HOW FAST THE USER COMPLETED THE LEVEL
-                            if (scoreCounter < 60) {
+                            if (scoreCounter < levelTimerPerformanceThree[levelTimerPerformanceCounter]) {
                                 flipMatchResultScreenScoreboard.classList.add('flip-match-result-screen-scoreboard-three-star-performance');
-                            } else if (scoreCounter < 120) {
+                            } else if (scoreCounter < levelTimerPerformanceTwo[levelTimerPerformanceCounter]) {
                                 flipMatchResultScreenScoreboard.classList.remove('flip-match-result-screen-scoreboard-three-star-performance');
                                 flipMatchResultScreenScoreboard.classList.add('flip-match-result-screen-scoreboard-two-star-performance');
                             } else {
@@ -242,6 +245,9 @@ function nextLevelFunction() {
     prevLevelButton.disabled = false;
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
     flipMatchResultHeader.textContent = flipMatchResultHeaderArray[levelCounter];
+
+    // PERFORMANCE COUNTER
+    levelTimerPerformanceCounter--;
 };
 
 function previousLevelFunction() {
@@ -260,6 +266,9 @@ function previousLevelFunction() {
     nextLevelButton.disabled = false;
     flipMatchResultScreenContainer.classList.remove('flip-match-result-screen-active');
     flipMatchResultHeader.textContent = flipMatchResultHeaderArray[levelCounter];      
+
+    // PERFORMANCE COUNTER
+    levelTimerPerformanceCounter--;
 };
 
 function goBackToMenuFunction() {
@@ -343,8 +352,7 @@ function flipMatchTimerFunction() {
                 clearInterval(flipMatchInterval);
             };
         };
-        console.log(scoreCounter);
-    }, 100);
+    }, 1000);
 };
 
 // INITIALIZING BUTTONS
